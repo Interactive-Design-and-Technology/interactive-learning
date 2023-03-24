@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/shared/sp-template/styles/SP-Global-2015.css">
+<link rel="stylesheet" type="text/css" href="/shared/sp-template/styles/SP-bootstrap-grid.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="/shared/sp-template/scripts/jquery.ui.touch-punch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/shared/sp-template/styles/jquery-ui.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="../js/html5shiv.js"></script>
+        <script src="../js/respond.min.js"></script>
+    <![endif]-->
+<style type="text/css">
+
+.hovereffect {
+	border: 3px solid #000;
+    border-radius: 27px;
+    cursor: default;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.hovereffect .overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0; border: 3px solid #000;
+    border-radius: 24px;
+	background-color: rgba(0,0,0,0.6);
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transform: translate(460px, -100px) rotate(180deg);
+	-ms-transform: translate(460px, -100px) rotate(180deg);
+	transform: translate(460px, -100px) rotate(180deg);
+	-webkit-transition: all 0.2s 0.4s ease-in-out;
+	transition: all 0.2s 0.4s ease-in-out;
+}
+.hovereffect img {
+	display: block;
+	position: relative;
+	-webkit-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.hovereffect h2 {
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	font-size: 17px;
+	padding: 10px;
+	background: rgba(0, 0, 0, 0.6);
+}
+.hovereffect p {
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	font-size: 17px;
+	padding: 10px;
+	background: rgba(0, 0, 0, 0.6);
+}
+.hovereffect a.info {
+	display: inline-block;
+	text-decoration: none;
+	padding: 7px 14px;
+	text-transform: uppercase;
+	color: #fff;
+	border: 1px solid #fff;
+	margin: 50px 0 0 0;
+	background-color: transparent;
+	-webkit-transform: translateY(-200px);
+	-ms-transform: translateY(-200px);
+	transform: translateY(-200px);
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.hovereffect a.info:hover {
+	box-shadow: 0 0 5px #fff;
+}
+.hovereffect:hover .overlay {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+	-webkit-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+}
+.hovereffect:hover h2 {
+	-webkit-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+.hovereffect:hover a.info {
+	-webkit-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+	-webkit-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+}
+.img-responsive {
+    height: 281px;
+    max-width: 100%;
+    width: 253px;
+}
+.maindiv{background-color: #ccc;
+    border: 3px solid #000;
+    border-radius: 24px;
+    display: table;
+    height: 250px;
+    text-align: center;
+    width: 160px;}
+.maindiv span {
+  display: table-cell;
+  vertical-align: middle;
+   text-align: center;
+	position: relative;
+	font-size: 17px;
+	padding: 10px;
+	}
+	.nav {border:none;}
+	.nav  li{margin: 5px;}
+</style>
+
+</head><body><h1 style="text-align: left;"><br><br><br>Interactive Flash Card Activity Template</h1>
+<p style="text-align: left;"><br>Activity Instructions</p>
+<p style="text-align: left;">First mouse over one of the grey card boxes. When the word pops up, test yourself by writing down the definition. Click on the View More on the card to check your definition by reading beneath the flashcard boxes.<br><br><br></p>
+<div class="graphic-tabs tabs-3" style="text-align: left;"><!-- Nav tabs -->
+<ul class="nav nav-tabs no-gutter" style="text-align: left;">
+<li>
+<div class="hovereffect">
+<div class="maindiv"><span></span></div>
+<div class="overlay">
+<h2>Flashcard 1</h2>
+<a href="#scenario1" data-toggle="tab" id="tab01" class="tab-image info">View More</a></div>
+</div>
+</li>
+<li>
+<div class="hovereffect">
+<div class="maindiv"><span></span></div>
+<div class="overlay">
+<h2>FLASHCARD 2</h2>
+<a href="#scenario2" data-toggle="tab" id="tab02" class="tab-image info">View More</a></div>
+</div>
+</li>
+<li>
+<div class="hovereffect">
+<div class="maindiv"><span></span></div>
+<div class="overlay">
+<h2>FLASHCARD 3</h2>
+<a href="#scenario3" data-toggle="tab" id="tab03" class="tab-image info">View More</a></div>
+</div>
+</li>
+</ul>
+<div class="tab-content" style="text-align: left;">
+<div class="tab-pane fade" id="scenario1">
+<h3>Flashcard 1 Term</h3>
+<p>Flashcard 1 Definition</p>
+</div>
+<div class="tab-pane fade" id="scenario2">
+<h3>Flashcard 2 Term</h3>
+<p>Flashcard 2 Definition</p>
+</div>
+<div class="tab-pane fade" id="scenario3">
+<h3>Flashcard 3 Term</h3>
+<p>Flashcard 3 Definition</p>
+</div>
+</div>
+<div class="graphic-tabs tabs-3" style="text-align: left;"><!-- Nav tabs -->
+<ul class="nav nav-tabs no-gutter">
+<li>
+<div class="hovereffect">
+<div class="maindiv"><span></span></div>
+<div class="overlay">
+<h2>Flashcard 4</h2>
+<a href="#scenario4" data-toggle="tab" id="tab04" class="tab-image info">View More</a></div>
+</div>
+</li>
+<li>
+<div class="hovereffect">
+<div class="maindiv"><span></span></div>
+<div class="overlay">
+<h2>Flashcard 5</h2>
+<a href="#scenario5" data-toggle="tab" id="tab05" class="tab-image info">View More</a></div>
+</div>
+</li>
+<li>
+<div class="hovereffect">
+<div class="maindiv"><span>&nbsp;</span></div>
+<div class="overlay">
+<h2>flashcard 6</h2>
+<a href="#scenario6" data-toggle="tab" id="tab06" class="tab-image info">View More</a></div>
+</div>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane fade" id="scenario4">
+<h3>Flashcard 4 Term</h3>
+<p>Flashcard 4 Definition</p>
+</div>
+<div class="tab-pane fade" id="scenario5">
+<h3>Flashcard 5 Term</h3>
+<p>Flashcard 5 Definition</p>
+</div>
+<div class="tab-pane fade" id="scenario6">
+<h3>Flashcard 6 Term</h3>
+<p>Flashcard 6 Definition</p>
+</div>
+</div>
+</div>
+<p style="text-align: left;"></p>
+</div></body></html>

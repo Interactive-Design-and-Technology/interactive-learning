@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/shared/sp-template/styles/SP-Global-2015.css">
+<link rel="stylesheet" type="text/css" href="/shared/sp-template/styles/SP-bootstrap-grid.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="/shared/sp-template/scripts/jquery.ui.touch-punch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/shared/sp-template/styles/jquery-ui.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<style>
+
+.msg_head {
+	color:black;
+}
+</style>
+
+<!-- Script for dynamic page updates code -->
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	//hide the all of the element with class msg_body
+	$(".msg_body").hide();
+	//toggle the componenet with class msg_body
+	$(".msg_head").click(function(){
+		$(this).next(".msg_body").slideToggle(600);
+	});
+});
+</script>
+	<script src="/content/enforced.../scripts/tablecloth.js" type="text/javascript"></script>
+
+
+</head><body><h1><br>Interactive Case Study Activity Template</h1>
+<p></p>
+<p>Activity Instructions Here</p>
+<h1><br><br>Case Title Here&nbsp;</h1>
+<blockquote>
+<p>Case Study Description Here</p>
+</blockquote>
+<p><br><br><br><br>You can type your answer into the space provided. Your answer won't be saved or submitted to your instructor, so you can redo the activity as often as you like.</p>
+<p><textarea cols="100" rows="8" maxlength="175" id="Answer1" placeholder="Type your response here" title="Answer"></textarea></p>
+<p></p>
+<p class="msg_head">Click Here to Show or Hide Your Instructor's Answer.</p>
+<div class="msg_body">
+<p>Instructor Answer Here</p>
+</div>
+<p><br><br><br><br><br></p></body></html>
