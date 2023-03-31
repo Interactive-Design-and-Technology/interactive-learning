@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/shared/sp-template/styles/SP-Global-2015.css">
+<link rel="stylesheet" type="text/css" href="/shared/sp-template/styles/SP-bootstrap-grid.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="/shared/sp-template/scripts/jquery.ui.touch-punch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/shared/sp-template/styles/jquery-ui.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<style>
+
+.msg_head {
+	color:white;
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){
+ //hide the all of the element with class msg_body
+ $(".msg_body").hide();
+ //toggle the componenet with class msg_body
+ $(".msg_head").click(function(){
+  $(this).next(".msg_body").slideToggle(600);
+ });
+});
+</script>
+<script src="/content/enforced/../scripts/tablecloth.js" type="text/javascript"></script>
+
+<!-- Dev Activity #1: Insert this line into the <head> after your <link>s and before any other <script>. This calls the jquery library from the Google API site, and the jQuery UI library from the jQuery site. The third line calls a script that makes all of this work on tablets. You need to "Get" it from the ID examples site, or you may also find it at https://raw.githubusercontent.com/furf/jquery-ui-touch-punch/master/jquery.ui.touch-punch.js -- just copy the whole code, paste it into a blank JavaScript document, save it in your scripts folder, and link to it. The order of these lines is important! -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="/content/enforced/../scripts/dragdrop.js"></script>
+<!-- End Dev Activity #1 -->
+
+<title>Drop Down Chart</title>
+
+<!-- Dev Activity #2: Insert this <style> code into the <head> of your HTML page, OR insert these styles (but not the <style></style> tags) into your course-specific CSS if you plan to use this more than once.
+
+Note that none of these styles actually control the functionality of the drag and drop itself, besides the last two, which are used in the self-check. You can use whatever styles you want. -->
+
+<style>
+.draggableAnswers td {
+	border:none;
+	padding:0;	
+}
+
+.draggableTargetTable * {
+	font-size:0.9em;	
+}
+
+.draggableTargetTable th[scope=col], .draggableTableAnswers th[scope=col], .dropdownTable th[scope=col] {
+	background:#736286;
+	color:#fff;
+	font-weight:bolder;
+	border:1px solid #000;
+	vertical-align:bottom;
+}
+
+.draggableTargetTable th[scope=row] {
+	background:#fff;
+	color:#000;
+	font-weight:bolder;
+	border:1px solid #000;
+	vertical-align:middle;
+}
+
+.draggable {
+	border: 1px solid #aaaaaa;
+	padding:0.6em;
+	display:inline-block;
+	width: 95%;
+	margin-bottom:0.5em;
+}
+
+.draggable:hover {
+	background:#199db2;
+	cursor:pointer;	
+}
+
+.draggable:hover span {
+	color:#fff;	
+}
+
+.draggableContainer {
+	width:100%;
+	overflow:hidden;
+}
+
+.draggableCol1 {
+	width:60%;
+	float:left;
+}
+
+.draggableCol2 {
+	width:25%;
+	float:right;
+	    -moz-column-count: 1;
+        -moz-column-gap: 1em;
+        -webkit-column-count: 1;
+        -webkit-column-gap: 1em;
+        column-count: 1;
+        column-gap: 1em;
+	font-size:0.7em;
+	margin: 1em 0.5em 0 0;
+}
+
+.correct:after {
+	color:green;
+	content: '\2714\0020 Correct';
+}
+
+.incorrect:after {
+	color:red;
+	content: '\2718\0020 Incorrect';
+}
+
+</style>
+
+<!-- End Dev Activity #2 -->
+
+
+
+</head><body><h1><br>Interactive Drag and Drop Activity Template</h1>
+<p><br><br>Activity Instructions Here</p>
+<!-- Dev Activity #3: Use the following format.
+
+The class="droppable" is controlled further down in the <script> to become "droppable." You can call it whatever you like, but you need that class information in there for the <script> to do its job.
+
+You may add as many of these as you wish. For each you add, remember to give it a unique id. The easiest it to continue the tgXX sequence as below. The more you add, the more tedious the self-check scripting will be. Alternatively, you could leave out the self-check altogether, just have a fillable table with a drop-down set of solutions. That works, too.
+
+Include activity and style specific instructions. You may wish to include an instruction to refresh the browser to reset the chart, as this functionality is not currently programmed.
+
+-->
+<article class="draggableContainer">
+<p></p>
+<div class="draggableCol1">
+<table class="draggableTargetTable" style="width: 120%;">
+<tbody>
+<tr>
+<th scope="col" style="width: 20%;">Question</th>
+<th scope="col" style="width: 80%;">Dropped Answer</th>
+</tr>
+<tr>
+<td style="width: 28.8084%;">Question 1</td>
+<td class="droppable" id="tg01" style="width: 80%;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 28.8084%;">Question 2</td>
+<td class="droppable" id="tg02" style="width: 80%;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 28.8084%;">Question 3</td>
+<td class="droppable" id="tg03" style="width: 80%;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 28.8084%;">Question 4</td>
+<td class="droppable" id="tg04" style="width: 80%;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 28.8084%;">Question 5</td>
+<td class="droppable" id="tg05" style="width: 80%;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 28.8084%;">Question 6</td>
+<td class="droppable" id="tg06" style="width: 80%;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<br><button class="btn ddtBtn" id="check">Click here to check your responses</button>
+<p><button class="btn" type="button" onclick="window.location.href=window.location.href">Try Again</button></p>
+</div>
+<div class="draggableCol2"><!-- CSS makes this appear on the right -->
+<div class="draggable"><span id="box01">Question Answer</span></div>
+<div class="draggable"><span id="box08">Question Answer</span></div>
+<div class="draggable"><span id="box05">Question Answer</span></div>
+<div class="draggable"><span id="box02">Question Answer</span></div>
+<div class="draggable"><span id="box03">Question Answer</span></div>
+<div class="draggable"><span id="box06">Question Answer</span></div>
+</div>
+<!-- End Dev Activity #3 --> <!-- Dev Activity #4: Draggable Items. You may have as many or as few as you wish. The CSS above puts them into columns, but you can take out those lines and display them all in one column if that suits your needs better. You can use images, text, or anything else.
+
+When dragged to a droppable <td>, the inner HTML of the <div> will copy over and the <div> itself will disappear. If you want the self-check option to work, you *need* to keep in the span tags with separate IDs.
+
+--> <!-- End Dev Activity #4 --></article>
+<!-- Dev Activity #5: This is the javascript that controls the checking function.  See comments within the code itself.
+-->
+<p>
+<script>// <![CDATA[
+$(document).ready(function(){
+	
+	// These two lines of code are ALL that you need to make this drag-and-drop work like a drag and drop. If you don't need the self-check functionality, you can copy in only these two lines of code starting $(".draggable") and $(".droppable") and call it a day.
+	
+	//Draggable elements: selects the class="draggable" and makes it draggable.
+	$(".draggable").draggable({
+		cursor: "crosshair"	 // Makes the cursor a crosshair in browsers like Chrome where the draggable element itself disappears. Take it out, along with the curly braces, if you don't want this feature.
+	});
+	
+	//Droppable elements: selects the class="droppable" and makes it able to accept draggable items.
+	$(".droppable").droppable({
+		drop: function(event,ui) {
+			
+			$(this).append(ui.draggable.html()+'<br><br>');  // This takes the inner HTML from the draggable div and inserts it into the droppable <td>
+			
+			ui.draggable.hide();  // This makes the droppable <div> disappear altogether (note it's already left its contents behind))
+			
+			$(this).droppable( "disable" );  // This line makes the <td> no longer able to accept elements after its been dropped onto. If you wish to drop more than one item into a <td>, just take this line out.
+			
+		}
+	});
+	
+	// End Drag-and-Drop Functionality code.
+	
+	
+	// Self-Check Functionality code. By using the :contains('') strategy, you can have more than one draggable element say the same thing. In this example, Toronto and 1867 appear twice; it doesn't matter which gets selected. Note that you only need to include as much of the innerHTML as needed to check for specificity. For example, you don't need to check for 13,700,000; you can just check for 13, because no other option has those three characters in sequence.
+	
+		$("#check").click(function(){
+		$("#tg01:contains('Artist')").addClass("correct");
+		$("#tg02:contains('Local')").addClass("correct");
+		$("#tg03:contains('Company')").addClass("correct"); // Note you only need to include enough of the inner HTML to check for specificity
+		$("#tg04:contains('Brand')").addClass("correct");
+		$("#tg05:contains('Entertainment')").addClass("correct");
+		$("#tg06:contains('Cause')").addClass("correct");			
+		//Wherever the "correct" class has not been added, the incorrect class is added.
+		$(".droppable:not([class~='correct'])").addClass("incorrect");
+	});
+});
+// ]]></script>
+</p>
+<!-- End Dev Activity #5 -->
+<p></p></body></html>

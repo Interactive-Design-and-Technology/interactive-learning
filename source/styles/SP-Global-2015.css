@@ -1,0 +1,1415 @@
+@charset "utf-8";
+/* CSS Document */
+/*****************************************
+** For use at Saskatchewan Polytechnic. **
+** Tomorrow in the Making.              **
+**								        **
+** 		Global Style Sheet v.2015       **
+**                                      **		
+** Created by the Instructional Design  **
+** Team, Learning Technologies.			**
+** (c) 2015 All Rights reserved by 		**
+** Saskatchewan Polytechnic.			**
+**										**
+******************************************/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+/* This font looks very similar to Sask Poly's branded font *if* needed. Typically we use Verdana.*/
+
+
+@media screen {
+	h1 {
+		display:none;	
+	}/*Takes away the h1 when page displayed on screen. In terms of workflow, hide this by adding a /* to the front of it while working on a course. When the course is released, turn this "on." */
+}
+
+/* Disable ALL printing of navigation message */
+@media print {
+    .navinstruc { display: none; }
+	
+	#Accordion1 div {
+			display:block !important;
+		} /* Ensures that the accordion panel, when used, will print all contents, all the time. Needs to be copied to the highest number of Accordion panels that exist on a page. */
+		
+	.shadedcallout, .sideYellow, .sidePurple, .sidePink, .sideTeal, .sideGreen {
+		color:#000 !important;
+		border: 1px solid #000;	/*Ensures that side boxes will appear as boxes when printed */
+	}
+	
+	th {
+		color:#000 !important;
+		font-weight:bolder !important; /*Ensures that the table headers aren't reverse type when printed*/
+	}
+	
+	nav#courseLinks input {
+		border: 1px solid #000;	
+	}/*Ensures that input buttons are visible and bordered when printed*/
+	
+	a.tooltips span {
+		visibility:visible;
+		position:static;
+		margin-bottom:2em;
+		margin-top:-3em;
+	}
+	
+	#Glossary-Link {
+		visibility:hidden;
+	}
+	
+	h1 {
+		position:absolute;
+		top:0;
+		padding-bottom:0;
+	}
+}
+
+/******************************************
+***      CSS Reset                      ***
+******************************************/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	color:#000;
+	font-weight:normal;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+abbr {
+	color:inherit;
+}
+
+/**************** End CSS Reset ***************/
+
+
+
+/**************** PAGE LAYOUT ***************/
+
+html {
+	background:#f2f2f2;
+	font-family:Geneva, Verdana, Arial, Helvetica, sans-serif;
+}
+
+body {
+	background:#ffffff;
+	margin-top:3%;
+	margin-bottom:5%;
+	margin-left:5%;
+	margin-right:5%;
+	padding:2% 6%;
+	min-height:100%;
+	overflow:visible !important;
+}
+
+/**************** End Page Layout ***************/
+
+
+
+/**************** STANDARD TYPOGRAPHY ***************/
+
+h1 {
+	font-size: 145%;
+	font-weight: 600;
+	text-transform: none;
+	padding: 0 0 0.5em 0;
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+}/*Typically hidden on screen, visible when printed*/
+
+h2 {
+	margin: 1.5em 0 0.5em 0;
+	padding: 0.5em 0 0.25em 0;
+	font-size: 160%;
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	border-bottom:1px dotted #736286; 
+	color:#736286;/*Passes AAA because it is big text*/
+}
+
+h3 {
+	margin: 1.5em 0 0 0;
+	padding: 0.5em 0 0.25em 0;
+	font-size: 130%;
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	color:#117c8f;/*passes AAA because text is big and bold*/
+	font-weight:bolder;
+}
+
+h4 {
+	margin:1.25em 0 0 0;
+	padding:0.7em 0 0.5em 0;
+	font-size: 125%;
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	border-bottom:none;
+	color:#753b96; /*Passes AAA*/
+	font-style:italic;
+}
+
+h5 {
+	margin: 1.25em 0 0 0;
+	padding:0.7em 0 0.25em;
+	font-size:110%;
+	color:#117c8f;
+	font-weight:bolder;
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+}
+
+h6 {
+	margin: 1.25em 0 0 0;
+	padding:0.7em 0 0.25em;
+	font-weight:bolder;
+	font-style:italic;
+	font-size:105%;
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	color:#736286; /*Not typically used*/
+}
+
+/* Eliminates extra white space between these combinations of elements */
+
+h1+h2, h2+h3, h3+h4, h4+h5, h5+h6, h2+ul, h3+ul, h2+p, h3+p {
+	margin-top:0;	
+}
+
+p+h2, p+h3, p+h4, p+h5, p+h6, aside+h2, aside+h3, section+h2, section+h3, ol+h2, ol+h3, ul+h2, ul+h3, pre+h2, pre+h3, pre+h4 {
+	padding-top:0;
+}
+
+/* Adds some white space between tables and succeeding h5 and h6 titles */
+
+table + h5, table + h6 {
+	padding-top:1.25em;	
+}
+
+p {
+	clear: none;
+	margin:0;
+	padding:0.5em 0;
+	line-height:1.2em;
+	color:inherit;
+}
+
+/* add a little extra spacing between adjacent paragraphs only */
+
+p + p {
+	padding-top: 1em;
+}
+
+/* styles superscripts and subscripts */
+
+sup { 
+    vertical-align: super;
+    font-size: smaller;
+	color:inherit;
+	text-decoration:inherit;
+}
+
+sub {
+	vertical-align:sub;
+	color:inherit;
+	font-size:smaller;
+	text-decoration:inherit;
+}
+
+/**************** End Standard Typography ***************/
+
+
+
+/**************** SPECIALIZED TYPOGRAPHY ***************/
+
+/* Use for pre-formatted text like HTML or Java code. When lines will break, consider using <code class="padded"> instead. */
+pre {
+	font-family: Andale Mono, Courier New, Courier, mono;
+	color: #004080;
+	font-weight: 600;
+	font-size: 95%;
+	margin:0;
+	padding:0.5em 2em;
+	clear: both;
+}
+
+pre br {
+	line-height:1.6em;
+}
+
+/* an alternative to PRE that is useful for putting code-like text within a <p>. To display as an indented block, use with a .padded class.*/
+
+code {
+	font-family: Andale Mono, Courier New, Courier, mono;
+	color: #004080;
+	font-weight: 600;
+	font-size: 95%;
+	margin:0;
+	padding:0.5em 0
+}
+
+/* Use for command-line style text */
+kbd {
+    font: normal normal 600 1em/0.8em monospace;
+	margin:0;
+	padding:0 0.2em;
+	vertical-align:middle;
+	border: 1px solid #000;
+}
+
+/* Only use <blockquote> for actual long quotations. For an indented shaded callout, use the provided style or style a new one in your course style sheet. */
+
+blockquote {
+	margin: 0.5em 5%;
+	padding:5%;
+	background-color:#f2f2f2;
+	line-height:1.1em;	
+}
+
+/* Displays quotes <q> inline and automatically puts in left and right double quotation marks. */
+q { 
+    display: inline;
+}
+
+q:before { 
+    content: '\201C';
+}
+
+q:after { 
+    content: '\201D';
+}
+
+/* Use for book and journal titles, names of statutes, etc., and in APA referencing */
+cite {
+	font-style:italic;
+	color:inherit;
+	font-weight:inherit;
+}
+
+/* Use to highlight text */
+mark {
+	background:yellow;	
+}
+
+/* Use to imply a "strong" voice, as though the voice is audibly raised. Do not use for style alone. To bold something without making it "strong," use the <b> tag. */
+strong {
+	font-style:inherit;
+	font-weight:600;
+	color:inherit;
+}
+
+/* Use to imply "emphasis" in the voice, as though the voice was slowed and clearly enunciated. Do not use for style alone. To italicise something without emphasizing it, use the <i> tag. */
+em {
+	font-weight:inherit;
+	font-style:italic;	
+	color:inherit;
+}
+
+/* Use when a word is first defined in a course. Include a title attribute for a (non-accessible) mouse-over. Do not rely on the title attribute as the only means of defining the word. */
+dfn {
+	font-weight:600;
+}
+
+/* Use to make something stylistically bold. Do not use it to add strength or emphasis to the author voice; use <strong> or <em> instead. */
+b {
+	font-weight:600;
+}
+
+/* Use to make something stylistically italic (foreign language, names of ships, etc.). Do not use it to add strength or emphasis to the author voice; use <strong> or <em> instead.*/
+i {
+	font-style:italic;
+	font-weight:inherit;
+	font-family:inherit;
+}
+
+del {
+	text-decoration:line-through;
+	font-weight:inherit;
+	font-family:inherit;
+
+}
+
+s {
+	text-decoration:line-through;
+	font-weight:inherit;
+	font-family:inherit;
+}
+
+ins {
+	text-decoration:underline;
+	font-weight:inherit;
+	font-family:inherit;
+}
+
+u {
+	text-decoration:underline;
+	font-weight:inherit;
+	font-family:inherit;
+}
+
+/* Miscellaneous HTML Elements */
+
+hr {
+	border-style:inset;
+	border-color:#199db2;
+}
+
+input {
+	resize:both; /* Making input boxes for templates automatically resizable */
+}
+
+/* Codes that should be used as defaults, but still must include a class so as to not mess up existing activities */
+
+.btn {
+	padding:0.5em 1em;
+	border:none;
+	background:#199db2;
+	font-weight:500;
+	color:#fff;
+}
+
+.btn:hover {
+	background:#000;
+	cursor:pointer;	
+}
+
+.txt {
+	width:100%;
+	padding:0.5em;
+	background:#FEF6ED;
+	color:#000;
+}
+
+.txt:hover {
+	background:#fff;
+	color:#000;
+	border:1px solid #000;
+	cursor:text;	
+}
+
+br {
+	line-height:inherit;
+}
+
+/* Miscellaneous Behaviours */
+
+.clear {
+	clear:both;
+}
+
+.printLink {
+	color:blue;	
+}
+
+/**************** End Specialized Typography ***************/
+
+
+
+/**************** CLASSED TYPOGRAPHY ***************/
+.all-caps {
+	text-transform:uppercase;
+	color:inherit;
+	font-weight:inherit;
+	font-style:inherit;
+}
+
+.blockindent {
+	padding-left:3em;
+}
+
+.break {
+	word-wrap:break-word;	
+}
+
+.indent, .indent p {
+	text-indent:1.5em;
+	line-height:1.7em;
+	padding:0;
+}
+
+.mnemonic {
+	padding:0.5em 0 0 1em;
+	vertical-align:top;
+}
+
+.mnemonic:first-letter, .mnemonic *:first-letter {
+	font-size:1.7em;
+	padding-right:1px;
+	font-family:Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+	vertical-align:bottom;
+	font-weight:600;
+}
+
+.nobreak {
+	white-space:nowrap;
+}
+
+.underline {
+	font-weight:inherit;
+	color:inherit;
+	text-decoration:underline;
+}
+
+
+.underline-low {
+	font-weight:inherit;
+	color:inherit;
+	border-bottom:1px solid;
+	padding-bottom:1px;
+}
+
+u.underline-low {
+	text-decoration:none;	
+}
+
+/*Special classes intended for use in blockquotes or asides*/
+
+.pullquote {
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	font-size:1.6em;
+	text-align:left;
+	font-style:italic;
+	background:#fff !important;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	padding:5%;
+	margin:1em 5%;
+}
+
+aside.pullquote {
+	font-size:1.1em;
+	padding: 0.5em 1em;
+	margin: 1em 5% 2em 2%;;
+}
+
+.pullquote p {
+	padding:0.2em 0 0 0;
+	line-height:1.5em;	
+}
+
+.pullquote-author {
+	text-align:right;
+}
+
+.pullquote-author:before {
+	content:"\2015";	
+}
+
+/* Alignments, etc. */
+
+.right {
+	text-align:right;
+}
+
+.left {
+	text-align:left;
+}
+
+.centre {
+	text-align:center;
+	margin: 0 auto;
+	display:block;
+	clear:both;
+}
+
+.justify {
+	text-align:justify;
+}
+
+/* Colours */
+
+.red {
+	color:#f00;
+}
+
+.green {
+	color:#4D6E20;
+}
+
+/**************** End Classed Typography ***************/
+
+
+
+/**************** LINKS ***************/
+
+/*Styling the Links and Interactivity -- This colour is an M&C-approved darkening of #199db2, the original colour that was supposed to be used, but that doesn't conform to WCAG 2.0 Level AA standards. */
+
+a {
+	font-style:inherit;
+	font-weight:inherit;	
+}
+
+a:link {
+	text-decoration:underline;
+	color:#158092;
+	cursor:pointer;
+}
+
+a:visited {
+	text-decoration:underline;
+	color:#158092;
+	cursor:pointer;
+}
+
+a:hover {
+	text-decoration:none;
+	color:#158092;
+	cursor:pointer;
+}
+
+a:active {
+	text-decoration:none;
+	color:#158092;
+	cursor:pointer;
+}
+
+/**************** End Links ***************/
+
+
+
+/**************** LISTS ***************/
+
+ul {
+	padding: 0 0 0 3%;
+	margin: 0 0 0 8%;
+	list-style:disc;
+}
+
+ol {
+	padding: 0 0 0 3%;
+	margin:0 0 0 8%;	
+	list-style:decimal;
+}
+
+li {
+	padding:0;
+	line-height:1.7em;
+	margin:0;
+	color:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+	clear:none;
+}
+
+/* For nested lists, follows the convention 1 > a > i */
+
+ol ol {
+	margin-left:0;
+	margin-top:0;
+	margin-bottom:1em;
+	list-style:lower-latin;
+}
+
+ol ol li {
+	margin-top:0.5em;
+	margin-left:1em;	
+}
+
+ol ol ol {
+	margin-left:0;
+	margin-top:0;
+	list-style:lower-roman;
+}
+
+ul ul {
+	margin-left:0;
+	margin-top:0;
+	margin-bottom:0.5em;
+	list-style-type:circle;
+}
+
+ul ul li {
+	margin-top:0.5em;
+	margin-left:1em;	
+}
+
+ul ul ul {
+	margin-left:0;
+	margin-top:0;
+	margin-bottom:0.5em;
+	list-style-type:square;	
+}
+
+/* List Classes */
+
+ul.beside-image, ol.beside-image {
+	overflow:hidden;	
+}
+
+ul.beside-image > li, ol.beside-image > li {
+	list-style-position:inside;
+	text-indent:1em;
+}
+
+ul.checklist > li {
+	list-style-type:none;
+}
+
+ul.checklist li:before {
+    content:"\2713\0020";
+	color:#176624;
+	font-size:1.2em;
+	margin-right:0.4em;
+}
+
+.compact ul, .compact ol {
+	margin-top: 0;
+	margin-bottom:0;	
+}
+
+.compact li {
+	margin: 0 0 0 ;
+	line-height: 1.2em;
+}
+
+.instruction-list {
+	padding:1em 0;
+}
+
+.instruction-list>li {
+	padding:0.5em 0;	
+}
+
+.no-list-indent {
+	text-indent:0;
+	padding-left:0;
+	margin-left:0;	
+}
+
+.spaced-list {
+	margin:0 0 1em inherit;
+}
+
+.spaced-list > li {
+	margin-top:1em;
+}
+
+.unstyled-list, .unstyled-list li {
+	list-style:none;
+	padding:0;
+	margin:1em 0 0.3em 1em;
+}
+
+/**************** End Lists ***************/
+
+
+
+/**************** DEFINITION LISTS ***************/
+
+dl {
+	margin:0;
+	padding:0;
+}
+
+dt {
+	margin: 0.5em 0 0.5em 0;
+	padding: 0;
+	font-weight: 600;
+}
+
+dt p {
+	margin:0;
+	padding:0;	
+}
+
+dd {
+	margin: 0 0 1em 1em;
+	padding: 0;
+	line-height:1.1em;
+
+}
+
+dd p {
+	margin: 0 0 0.5em 0;
+	padding:0;
+}
+
+/**************** End Definition Lists ***************/
+
+
+
+/**************** TABLES ***************/
+
+/* 
+	TableCloth	
+	by Alen Grakalic, brought to you by cssglobe.com
+	
+	Proprietary styles that make use of a script to make the tables behave in an interesting way.
+*/
+
+/* general styles */
+
+table{
+	margin:1em 0;
+	font-size:100%;
+}
+
+th, td{
+	text-align:left;
+	padding:.5em;
+	border:1px solid #000;
+	overflow:hidden;
+}
+
+th {
+	background:#736286;
+	color:#fff;
+	font-weight:bolder;
+	border:1px solid #000;
+}
+
+.grey th {
+	background:#4d4d4f;
+}
+
+td {
+	background:#ffffff;
+	color: #000;
+}
+
+table.c80 {
+	width:80%;
+	margin-left:10%;
+	margin-right:10%;	
+}
+
+/* TableCloth styles */
+
+tr.even td{background:#ffffff;}
+tr.odd td{background:#e2e3e5;}
+
+/* Optional code that can be turned on to create a mouseover effect that has proven unpopular as a default option. */
+
+/*
+th.over, tr.even th.over, tr.odd th.over{background:#4d4d4f; color:#fff;}
+th.down, tr.even th.down, tr.odd th.down{background:#753b96; color:#fff;}
+th.selected, tr.even th.selected, tr.odd th.selected{background:#753b96; color:#fff;}
+
+.grey th.over, .grey tr.even th.over, .grey tr.odd th.over{background:#736286; color:#fff;}
+.grey th.down, .grey tr.even th.down, .grey tr.odd th.down{background:#753b96; color:#fff;}
+.grey th.selected, .grey tr.even th.selected, .grey tr.odd th.selected{background:#753b96; color:#fff;}
+
+td.over, tr.even td.over, tr.odd td.over{background:#ecfbd4;}
+
+td.over, tr.even td.over, tr.odd td.over{background:#4d4d4f;color:#fff;}
+td.down, tr.even td.down, tr.odd td.down{background:#753b96;color:#fff;}
+
+td.selected, tr.even td.selected, tr.odd td.selected{background:#753b96;color:#fff;}
+
+.over li, .over p, .over blockquote, .over a {
+	color:#fff;
+}
+
+*/
+
+/* End Optional Code */
+
+/* For headers of horizontal rows, remove the purple background and decrease the font weight. */
+
+tr.odd th[scope=row] {
+	background:#e2e3e5;
+	color:#000;
+	font-weight:600;
+}
+
+tr.even th[scope=row] {
+	background:#fff;
+	color:#000;
+	font-weight:600;	
+}
+
+/* For tables with no borders, colours, or other styling */
+
+.no-style {
+	border:0;
+	margin:0;
+	padding:0;
+	display:table;
+}
+
+.no-style th, .no-style td {
+	border:0;
+	margin:0;
+	padding:0;
+	background:inherit;
+	color:inherit;
+}
+
+/* use this if you want to apply different styleing to empty table cells*/
+td.empty, tr.odd td.empty, tr.even td.empty{background:#fff;}
+
+/* End TableCloth Settings */
+
+caption {
+	padding: 0.5em 0 0.4em 0;
+	font-size: 0.8em;
+	color:#000;
+	font-weight: 500;
+	text-align: left;
+
+}
+
+/* Adjust <hx> and <p> padding in table cells */
+td h2, td h3, td h4, td p {
+	padding-bottom: 0.3em;
+	padding-top: 0.3em;
+}
+
+table ul, table ol {
+	margin-left:10%;
+}/*Ensures that lists are not grossly indented when they appear in tables*/
+
+table.centreCell th, table.centreCell td {
+	text-align:center;
+}
+
+/**************** End Tables ***************/
+
+
+
+/**************** SPECIAL CLASSES ***************/
+
+/*for bottom-of-section/page references */
+.reference, .apa {
+	color: #555; /*AAA accessible*/
+	font-size: 82%
+}
+
+.apa h2 {
+	font-size:1.1em;
+}
+
+.reference h2 {
+	font-size:1.4em;
+	border-top:1px solid #555;
+	padding-top:0.1em;
+}
+
+.apa p, .reference p {
+	font-style:none;
+	padding-left:5em;
+	text-indent:-5em;
+	padding-bottom:0.5em;
+	word-wrap:break-word;
+}
+
+/*Equation Text*/
+
+.equation {
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	font-size:1.1em;	
+}
+
+.hidden {
+	display:none;
+}
+
+/* use for bottom-of-screen "navigation" message */
+.navinstruc {
+	color: #000;
+	background:#b4d1d5;
+	padding: 2%;
+	font-size: 90%;
+}
+
+.navinstruc a {
+	color: #000;
+	font-weight:600;
+}
+
+.padded {
+	padding:1em;
+	display:block;
+}
+
+/* Set <p> text as a callout with a styled background */
+
+.shadedcallout {
+	margin:1.3em 0 0 0;
+	padding: 1em;
+	clear: both;
+ 	background-color: #CFCFD2;/*Passes AAA*/
+	color:#000;
+}
+
+.shadedcallout kbd, .shadedcallout code, .shadedcallout pre {
+	color:#111;/*Passes AAA; ensures that these specialized formats still appear OK */
+}
+
+.shadedcallout a {
+	color: #000;
+	font-weight:600;
+}
+
+ol.shadedcallout, ul.shadedcallout {
+	padding-left:3em
+}
+
+.shadedcallout p, .shadedcallout li {
+	color:#000;
+}
+
+.sp-brand {
+	font-family: 'Montserrat', Verdana;	
+}
+
+.teal {
+	color: #000;
+	background:#b4d1d5 !important;
+}
+
+.warning {
+	font-weight:600 !important;
+	font-style:italic;
+	font-size:0.8em;
+	color:#710000 !important;/* Accessible to AAA */
+	background:#FFC4C4;/* Accessible to AAA */
+	padding:1em 5% !important;
+	margin:0 4%;
+	text-align:center;	
+}
+
+.warning strong {
+	font-weight:700;
+	font-size:1.2em;
+	text-transform:uppercase;	
+}
+
+/* Activity Boxes */
+
+/* This section defines activity boxes. Note that colours as created pass the WCAG 2.0 Contrast Ratio requirements for accessibility (i.e. 7.0:1 ratio for Level AAA compliance). If these colours are changed, please check http://webaim.org/resources/contrastchecker/ to ensure requirements are met. */
+
+.activity {
+	margin: 1.3em 0 1.3em 0;
+	background:#b9aec2;/*Accessible AAA*/
+	padding:1em 4% 1.5em 4%;
+	clear:both;
+}
+
+.activity h2 {
+	font-size:130%;
+	font-weight:normal;
+	background:#ffffff;
+	color:#000;
+	padding:0.4em 0.4em 0.4em 4%;
+	margin: 0 0 0.9em 0;
+	border:none;
+}
+
+.activity h3, .activity h4, .activity h5, .activity h6, .activity p {
+	padding: 0.4% 2% 0.5% 4%;
+	color:#000;
+	font-weight:normal;
+	border:none;
+}
+
+.activity h3 {
+	font-size:1.1em;
+	padding-bottom:0.5em;
+	font-weight:bolder;
+}
+
+.activity p + p {
+	padding-top:1em;
+}
+
+.activity a:link {
+	color:#000083; /*AAA accessible against purple background */
+	text-decoration:underline;
+	font-weight:600;
+}
+
+.activity a:visited {
+	color:#000083;
+	text-decoration:underline;
+	font-weight:600;
+}
+
+.activity a:hover {
+	color:#000083;
+	text-decoration:none;
+	font-weight:600;
+}
+
+.activity a:active {
+	color:#0000FF;
+	text-decoration:none;
+	font-weight:600;
+}
+
+.activity a:focus {
+	color:#000083;
+	text-decoration:none;
+	font-weight:600;
+}
+
+.activity .activity-type {
+	font-variant:small-caps;
+}
+
+.activity code, .activity pre {
+	color:#000;
+}
+
+.activity .shadedcallout {
+	background:#e2e3e5;
+	margin:0 4%;
+	padding:0.5em 5%;
+	text-align:center;
+}
+
+/* Properties for side notes. These are automatically  sticky note looking jobs. Use the <h2> tag within the side note for your title. */
+
+.side {
+	float:right;
+	width:30%;
+	background:#b9aec2;
+	padding:3%;/*Percents work better than ems or other relative units on smaller screens*/
+	margin: 2% 0 2% 4%;
+	font-size:0.9em;
+}
+
+.side h2 {
+	margin:0;
+	padding:0 0 1% 0;
+	font-weight:bolder;
+	font-size:1.1em;
+	color:#000;
+}
+
+.side ol, .side ul {
+	margin-left:10%;
+}
+
+.side ol>li, .side ul>li {
+	line-height:1.1em;
+}
+
+.side ol>li+li, .side ul>li+li {
+	margin-top:0.5em;
+}
+
+/**************** End Special Classes ***************/
+
+
+
+/**************** GRAPHICS PROPERTIES ***************/
+
+/* Place all images in this figure box. The caption will automatically resize to the size of the image. Responsively designed. */
+
+img {
+	max-width:100%;	
+} /* Image will not expand to a larger size than its actual pixel size, unless classed to do just that. */
+
+figure {
+	padding:0;
+	margin:0;
+	display:table;
+}
+
+figcaption {
+	display:table-caption;
+	caption-side:bottom;
+	font-size:0.8em;
+	text-align:left;
+	opacity:1;
+	z-index:-1;
+}
+
+/*Make a <figcaption class="ImgTitle"> if you want your image / caption to have a title*/
+.ImgTitle {
+	font-weight: bolder;
+	text-align: left;
+	padding-top:0.2em;
+	padding-bottom:0.3em;
+}
+
+/* Automatically expands the image to the size of the container in which it is placed.*/
+.expanding {
+	width:100%;
+	height:auto;
+}
+
+/*Use this to float an image and its caption to the right.*/
+.rightfloat {
+	width:auto;
+	margin:2% 0 4% 4%;
+	float:right;
+}
+
+/*Use this to float an image to the right *if* you want it to maintain of the page width in all screens and in all devices*/
+.rightfloatScale {
+	width:40%;
+	margin:2% 0 4% 4%;
+	float:right;
+}
+
+/*Use this to float an image and its caption to the left.*/
+.leftfloat {
+	width:auto;
+	margin:2% 4% 4% 0;
+	float:left;
+}
+
+/*Use this to float an image to the left *if* you want it to maintain of the page width in all screens and in all devices*/
+.leftfloatScale {
+	width:40%;
+	margin:2% 4% 4% 0;
+	float:left;
+}
+
+/*Use this to centre an image and its caption.*/
+.centreFigure {
+	width:auto;
+	margin:2% auto 4% auto;
+}
+
+/* Use this to put the image in the centre *if* you want it to maintain of the page width in all screens and in all devices; customize to whatever you want the width size to be, or copy and build additional classes. */
+
+.centreFigureScale {
+	width:70%;
+	margin:2% auto 4% auto;
+}
+
+.rightfloatScale img, .leftfloatScale img, .centreFigureScale img {
+	max-width:100%;
+}
+
+.fullWidth, .expanding {
+	width:100%;
+}
+
+.border {
+	padding:1px;
+    border:1px solid #ddd;
+}
+
+/**************** End Graphics Properties ***************/
+
+
+/**************** FOOTNOTES *********************/
+
+.footnote {
+	border-top: 2px ridge #199db2;
+	font-size:0.8em;
+	margin: 1em 0 0 0;
+	word-wrap:break-word;
+}
+
+.footnote ol {
+	margin: 1em 1% 0 1%;	
+}
+
+.footnote ol>li {
+	list-style:decimal;
+	margin:0 0 1em 0;
+	padding: 0;
+	word-break:loose;	
+}
+
+.footnote ul {
+	list-style:none;
+	padding: 0 4%;
+	margin: 0;	
+}
+
+.footnote ul>li {
+	margin: 1em 0;	
+}
+
+.footnote ul>li:nth-child(1):before {
+	content:'\2731\0020'; /* asterisk */
+	vertical-align:super;
+	font-size:0.8em;
+	font-weight:600;
+}
+
+.footnote ul>li:nth-child(2):before {
+	content:'\2020\0020'; /* dagger */
+	vertical-align:super;
+	font-size:0.8em;
+	font-weight:600;
+}
+
+.footnote ul>li:nth-child(3):before {
+	content:'\2021\0020'; /* double dagger */
+	vertical-align:super;
+	font-size:0.8em;
+	font-weight:600;
+}
+
+/**************** End Footnotes *****************/
+
+
+/**************** INTERACTIVE ELEMENTS ***************/
+
+/* Nav buttons, styled in a way that is inspired (but not entirely informed) by Sask Poly branding. For use with the CSS Rollover template, used specifically for a single place on every page to show learning goals. */
+
+#courseLinks {
+	float:right;
+	margin-top:0;
+}
+
+#courseLinks input {
+	font-variant:small-caps;
+	font-weight:bolder;
+	padding:0.7em;
+	margin: 0 0 2em 2em;
+	border:none;
+	width:7em;
+	background:#736286;
+	color:#fff;
+}
+
+#courseLinks input:hover {
+	background:#555;
+	color:#fff;
+}
+
+/* Default settings for tooltips that appear when input button is hovered over. Customize according to your needs. */
+
+.tooltips {
+  position: relative;
+  display: inline;
+}
+.tooltips #objectives-box {
+  position: absolute;
+  font-size:0.8em;
+  width:30em;
+  color: #000;
+  background:#b4d1d5;
+  height: auto;
+  line-height: 1.2em;
+  text-align: left;
+  visibility: hidden;
+  border-radius: 10px;
+  border: 3px solid #189db3;
+  right:100%;
+}
+
+@media print {
+	
+	.tooltips #objectives-box {
+		visibility:visible;
+		opacity: 1;
+		position:relative;
+		float:left;
+		border-radius:0px;
+		padding:1em;
+		border:1px solid #000;
+		background:#fff;
+	}
+}
+
+.tooltips:hover #objectives-box {
+  visibility: visible;
+  opacity: 1;
+  top:0;
+  margin-top: -10px;
+  margin-right: 15px;
+  padding: 5px 10px 5px 10px;
+  z-index: 999;
+}
+
+#lo, #ls, #la {
+	font-size:1.1em;
+	padding:0;
+	margin:0;
+	font-weight:bolder;
+	border:none;
+	color:#000;
+}
+
+/* For use in the "Self Assessment" template or similar, with a series of text boxes and drop-downs to check answers */
+
+.selfCheckText {
+	width:96%;
+	height:5em;
+	color:#555;
+	padding:5px 10px 5px 10px;
+}
+
+.selfCheckArea {
+	padding-left:3%;
+	padding-right:3%;
+}
+
+.selfCheckArea + .selfCheckArea {
+	margin-top:2em;
+}
+
+.msg_head {
+	padding:0.5em 3%;
+	margin:1px;
+	background-color:#b4d1d5;
+	font-size:0.9em;
+	font-weight:600;
+	cursor:pointer;
+	width:95%;
+}
+
+.msg_head:hover {
+	background:#69A3AB;	
+}
+
+.msg_body, .moreShow {
+	padding:0.7em 3%;
+	background-color:#e7f0f1;
+	line-height:1.1em;
+	font-size:1em;
+	width:95%;
+}
+
+.msg_body table th, .moreShow table th {
+	background:#f2f2f2;
+	color:inherit;	
+}
+
+.moreClick + .moreShow {
+	margin-top:0.5em;	
+}
+
+.moreClick, .moreShow {
+	margin-bottom:1em;	
+}
+
+.moreClickObverse, .moreClickReverse {
+	color:#fff;	
+}
+
+/**************** End Interactive Elements ***************/

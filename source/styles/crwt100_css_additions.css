@@ -1,0 +1,332 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Clear sections for the sake of a possible 2-column format, which will not render properly if this isn't here */
+ 
+section {
+                clear:both;
+}
+ 
+/* ACTIVITY BOXES */
+/* This section defines activity boxes */
+
+ 
+.activity {
+                margin-left:10px;
+                margin-right:10px;
+                margin-top:1.3em;
+                margin-bottom:1.3em;
+                background: #b9aec2;
+                border-radius: 15px;
+                padding:1em 1em 2em 1em;
+                color:#000;
+}
+ 
+.activity h2 {
+                font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+                font-size:1.3em;
+                background:#ffffff;
+                color:#000000;
+                padding:0.4em;
+                padding-left:0.7em;
+                border-radius:5px;
+                margin-bottom:0.9em;
+}
+ 
+.activity p.white {
+                padding-left:1em;
+                padding-right:1em;
+                padding-top:0.2em;
+                padding-bottom:0.3em;  
+				font-size: 12pt;  
+				color:#fff;
+				       
+}
+ 
+.discussion {
+                background: #199db2;
+}
+
+.discussion h2 {
+				color:#000000;
+}
+ 
+.discussion h3 {
+                color:#ffffff;
+		
+}
+
+.reflection  {
+			background: #b4d1d5;
+}
+
+.reflection h2 {
+			color: #000000;
+}
+
+ 
+.quiz {
+                background: #753B96;
+}
+ 
+.quiz h2 {
+                color:#000000;
+}
+ 
+.reading {
+                background: #117C8F;
+}
+ 
+.reading h3 {
+                color:#ffffff;
+}
+ 
+
+.whitebox {
+                background: #ffffff;
+}
+ 
+.whitebox h2 {
+                color:#000000;
+} 
+ 
+ <style type="text/css">
+body {
+	margin: 10px auto;
+	width: 500px;
+	font: 75%/120% Verdana,Arial, Helvetica, sans-serif;
+}
+p {
+	padding: 0 0 1em;
+}
+.msg_list {
+	margin: 0px;
+	padding: 0px;
+	width: 85%;
+}
+.msg_head {
+	cursor: pointer;
+	position: relative;
+	background-color:#D6D6D6;
+	margin:1px;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+.msg_body {
+	padding: 5px 10px 15px;
+	background-color:#F4F4F8;
+}
+</style>
+ 
+ /*properties for side notes*/
+
+.side {
+     float:right;
+     width:30%;
+     background:#F7F6D5;
+     box-shadow:#E3D888;
+     padding:3%;
+     margin-left:4%;
+     margin-bottom:2%;
+     margin-top:1%;
+     font-size:0.9em;
+}
+
+.side h2 {
+     margin:0;
+     padding:0 0 1% 0;
+     font-weight:bolder;
+     font-size:1.1em;
+}
+
+
+/* Place all images in this figure box. The caption will automatically resize to the size of the image. Responsively designed. */
+ 
+figure {
+     padding:0;
+     margin:0;
+     display:table;
+}
+ 
+figcaption {
+     display:table-caption;
+     caption-side:bottom;
+     font-size:0.8em;
+     text-align:left;
+}
+ 
+/*Make a <figcaption class="ImgTitle"> if you want your image / caption to have a title*/
+.ImgTitle {
+     font-weight: bolder;
+     text-align: center;
+}
+
+
+/*Use this to float an image and its caption to the right.*/
+.rightfloat {
+     width:auto;
+     margin:2% 0 4% 4%;
+     float:right;
+}
+
+/*Use this to float an image to the right *if* you want it to maintain of the page width in all screens and in all devices*/
+.rightfloatScale {
+     width:30%;
+     margin:2% 0 4% 4%;
+     float:right;
+}
+
+/*Use this to float an image and its caption to the left.*/
+.leftfloat {
+     width:auto;
+     margin:2% 4% 4% 0;
+     float:left;
+}
+ 
+/*Use this to float an image to the left *if* you want it to maintain of the page width in all screens and in all devices - this one is at 25% instead of the 40% of the global template - use right float scale for 40%*/
+.leftfloatScale {
+     width:25%;
+margin:2% 4% 4% 0;
+     float:left;
+}
+
+
+
+/*******************************************************************/
+/* For a centered image and centered paragraph * and the pullout will create a paragraph with larger font/ 
+/*******************************************************************/
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+p.center {
+  text-align: center;
+  font-size:0.8em;
+}
+
+.pullout {
+	color: #666666;
+	font-size: 135%
+}
+
+
+/*CSS3 box shadown effect*/
+.box_shadow {
+     
+    box-shadow: 0 6px 16px -6px black;
+     
+    z-index: -1;
+    left: 20px;
+	min-height:600px;
+	padding:10px;
+	
+}
+
+
+
+/**************** INTERACTIVE ELEMENTS ***************/
+
+/* Nav buttons, styled in a way that is inspired (but not entirely informed) by Sask Poly branding. For use with the CSS Rollover template, used specifically for a single place on every page to show learning goals. */
+
+#courseLinks {
+	float:right;
+	margin-top:0;
+}
+
+#courseLinks input {
+	font-variant:small-caps;
+	font-weight:bolder;
+	padding:0.7em;
+	margin: 0 0 2em 2em;
+	border:none;
+	width:7em;
+	background:#736286;
+	color:#fff;
+}
+
+#courseLinks input:hover {
+	background:#555;
+	color:#fff;
+}
+
+/* Default settings for tooltips that appear when input button is hovered over. Customize according to your needs. */
+
+.tooltips {
+  position: relative;
+  display: inline;
+}
+
+
+#lo, #ls, #la {
+	font-size:1.1em;
+	padding:0;
+	margin:0;
+	font-weight:bolder;
+	border:none;
+	color:#000;
+}
+
+/* For use in the "Self Assessment" template or similar, with a series of text boxes and drop-downs to check answers */
+
+.selfCheckText {
+	width:96%;
+	height:5em;
+	color:#555;
+	padding:5px 10px 5px 10px;
+}
+
+.selfCheckArea {
+	padding-left:3%;
+	padding-right:3%;
+}
+
+.selfCheckArea + .selfCheckArea {
+	margin-top:2em;
+}
+
+.msg_head {
+	padding:0.5em 3%;
+	margin:1px;
+	background-color:#b4d1d5;
+	font-size:0.9em;
+	font-weight:600;
+	cursor:pointer;
+	width:95%;
+}
+
+.msg_head:hover {
+	background:#69A3AB;	
+}
+
+.msg_body, .moreShow {
+	padding:0.7em 3%;
+	background-color:#e7f0f1;
+	line-height:1.1em;
+	font-size:1em;
+	width:95%;
+}
+
+.msg_body table th, .moreShow table th {
+	background:#f2f2f2;
+	color:inherit;	
+}
+
+.moreClick + .moreShow {
+	margin-top:0.5em;	
+}
+
+.moreClick, .moreShow {
+	margin-bottom:1em;	
+}
+
+.moreClickObverse, .moreClickReverse {
+	color:#fff;	
+}
+
+/**************** End Interactive Elements ***************/
