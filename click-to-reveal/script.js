@@ -1,3 +1,18 @@
+const questions = [
+    {
+        'question' : 'How to open a door?',
+        'answer' : 'you either push or pull it'
+    },
+    {
+        'question' : 'How to open a door?',
+        'answer' : 'you either push or pull it'
+    },
+    {
+        'question' : 'How to open a door?',
+        'answer' : 'you either push or pull it'
+    }
+]
+
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
@@ -9,7 +24,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     for(let x = 0;x < buttons.length; x++ ){
         buttons[x].addEventListener("click", (event) => {
+
             console.log(`button clicked ${x}`);
+            textChange(questions[x].answer);
         })
     }
 
