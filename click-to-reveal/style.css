@@ -2,7 +2,7 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.container {
+#idt-click-to-reveal {
     background-color: blueviolet;
     max-width: 70%;
     padding: 1em;
