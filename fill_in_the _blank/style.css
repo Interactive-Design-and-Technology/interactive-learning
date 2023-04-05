@@ -40,28 +40,19 @@ font-size: 25px;
             font-size: 25px;
 
             }   
-
-
-
-
-
-
-
-
-
-
-
-
 textarea {
-	width:50%;
-	height:3em;
-	margin-left: 26%;
-	padding: 1%;	
+	width:20%;
+	height:20%;
+		
 
 
 }
 #op5{
-    margin-left: 40%;
+    margin-left: 37%;
+    color:blue;
+    height:100px;
+    width:400px;
+    font-size: 25px;
 }
 
 
