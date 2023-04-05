@@ -16,12 +16,22 @@ width:200px;
 font-size: 25px;
 }
 
+.option-container button.correct{
+    color:green;
+}
 
-#idt-op1, #idt-op2, #idt-op3, #idt-op4{
+.option-container button.incorrect{
+    color:red;
+}
+
+
+
+.option-container button{
     color:blue;
     height:100px;
     width:200px;
     font-size: 25px;
+
     }
   
 textarea {
