@@ -17,29 +17,13 @@ font-size: 25px;
 }
 
 
-#op1{
+#idt-op1, #idt-op2, #idt-op3, #idt-op4{
     color:blue;
     height:100px;
     width:200px;
     font-size: 25px;
     }
-
-
-#op3{
-        color:blue;
-        height:100px;
-        width:200px;
-        font-size: 25px;
-
-        }
-
-#op4{
-            color:blue;
-            height:100px;
-            width:200px;
-            font-size: 25px;
-
-            }   
+  
 textarea {
 	width:20%;
 	height:20%;
@@ -47,7 +31,7 @@ textarea {
 
 
 }
-#op5{
+#idt-submit{
     margin-left: 37%;
     color:blue;
     height:100px;
