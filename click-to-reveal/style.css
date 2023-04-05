@@ -9,29 +9,41 @@ body {
     
 }
 
-.flexBox{
+.idt-flexBox{
     display: flex;
 }
 
-.sideBox {
+.idt-sideBox {
     align-self: center;
     margin: 1em;
-    
 }
 
-.mainContent {
+.idt-mainContent {
     flex-grow: 3;
+    text-align: center;
+    align-self: center;
+    margin: 1em;
 }
 
-button {
-    background-color: black;
-    color: white;
-padding: 1em 2em 1em 2em ;
+.idt-active-btn{
+    display: block;
+    background-color: white;
+    color: black;
+    padding: 1em 2em 1em 2em ;
     margin: 0.5em;
     border: none;
 }
 
-h1{
+.idt-btn {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 1em 2em 1em 2em ;
+    margin: 0.5em;
+    border: none;
+}
+
+h1, p{
     text-align: center;
-    flex-wrap: wrap;
+    color: white;
 }
