@@ -16,16 +16,18 @@ const questions = [
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
-    // step 1 get all the buttons 
-    // step 2 loop through all the buttons and add event listeners 
+   let btnContainer =  document.getElementById("idt-btn-container")
+   for(let i = 0; i < questions.length; i++){
+        btnContainer.innerHTML += `<button>${questions[i].question}</button>`
+   }
 
     const buttons = document.getElementsByTagName('button');
     console.log(buttons);
 
-    let y = 99
+    let y = buttons.length + 1
 
     for (let x = 0; x < buttons.length; x++) {
-        buttons[x].innerHTML = `${questions[x].question}`;
+        
 
 
         buttons[x].addEventListener("click", (event) => {
