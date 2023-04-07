@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
         buttons[x].addEventListener("click", (event) => {
 
-            buttons[x].classList.remove("idt-btn");
+            
             buttons[x].classList.add("idt-active-btn");
 
 
@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
             if(y < buttons.length + 1){
             buttons[y].classList.remove("idt-active-btn");
-            buttons[y].classList.add("idt-btn");
+    
             };
 
             y = x
