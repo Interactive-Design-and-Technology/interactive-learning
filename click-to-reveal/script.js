@@ -16,41 +16,40 @@ const questions = [
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
-    // step 1 get all the buttons 
-    // step 2 loop through all the buttons and add event listeners 
+    let btnContainer = document.getElementById("idt-btn-container")
+    for (let i = 0; i < questions.length; i++) {
+        btnContainer.innerHTML += `<button>${questions[i].question}</button>`
+    }
 
-    const buttons = document.getElementsByTagName('button');
+    const buttons = btnContainer.getElementsByTagName('button');
     console.log(buttons);
 
-    let y = 99
-
+    // Loop through all buttons
+    // Remove "idt-active-btn" from all other buttons
+    // Add "idt-active-btn" to the current/clicked button
     for (let x = 0; x < buttons.length; x++) {
-        buttons[x].innerHTML = `${questions[x].question}`;
-
-
         buttons[x].addEventListener("click", (event) => {
-
-            buttons[x].classList.remove("idt-btn");
-            buttons[x].classList.add("idt-active-btn");
-
-
             console.log(`button clicked ${x}`);
-
-
+            deactivateAllButtons(buttons);
+            activateButton(buttons[x]);
             textChange(questions[x].answer);
-
-            if(y < buttons.length + 1){
-            buttons[y].classList.remove("idt-active-btn");
-            buttons[y].classList.add("idt-btn");
-            };
-
-            y = x
-        }
-        )
-    
+        });
     }
 });
 
-function textChange(url) {
-    document.getElementById('container').innerHTML = `<p> ${url} </p>`
+// Add "idt-active-btn" to the current/clicked button
+function activateButton(button) {
+    button.classList.add("idt-active-btn");
+}
+
+// Remove "idt-active-btn" from all other buttons
+function deactivateAllButtons(buttons) {
+    for (let x = 0; x < buttons.length; x++) {
+        buttons[x].classList.remove("idt-active-btn");
+    }
+}
+
+// Change the text in the container
+function textChange(text) {
+    document.getElementById('idt-ans-container').innerHTML = `<p> ${text} </p>`
 }

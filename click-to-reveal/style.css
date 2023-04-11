@@ -9,33 +9,28 @@ body {
     
 }
 
-.idt-flexBox{
+#idt-click-to-reveal div:first-of-type {
     display: flex;
-}
+  }
 
-.idt-sideBox {
+  #idt-click-to-reveal div div{
     align-self: center;
     margin: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
-.idt-mainContent {
-    flex-grow: 3;
-    text-align: center;
-    align-self: center;
-    margin: 1em;
-}
 
-.idt-active-btn{
-    display: block;
+#idt-click-to-reveal button.idt-active-btn{
+    
     background-color: white;
     color: black;
     padding: 1em 2em 1em 2em ;
     margin: 0.5em;
     border: none;
 }
-
-.idt-btn {
-    display: block;
+#idt-click-to-reveal button  {
+    
     background-color: black;
     color: white;
     padding: 1em 2em 1em 2em ;
@@ -46,4 +41,11 @@ body {
 h1, p{
     text-align: center;
     color: white;
+}
+
+@media screen and (max-width: 700px){
+    #idt-click-to-reveal div:first-of-type {
+        display: flex;
+        flex-direction: column;
+      }
 }
