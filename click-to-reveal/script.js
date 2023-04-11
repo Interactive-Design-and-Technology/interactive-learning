@@ -51,5 +51,5 @@ function deactivateAllButtons(buttons) {
 
 // Change the text in the container
 function textChange(text) {
-    document.getElementById('container').innerHTML = `<p> ${text} </p>`
+    document.getElementById('idt-ans-container').innerHTML = `<p> ${text} </p>`
 }
