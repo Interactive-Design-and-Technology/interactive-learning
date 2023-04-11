@@ -7,15 +7,31 @@ const idtQuestions = [
         'answer': "scabies",
     },
     {
-        'question': " is medical term for itch caused by mites?",
-        'answer': "scabies",
+        'question': " percentage of the human body is water?",
+        'answer': "66%",
+    },
+    {
+        'question': " is the number of taste buds are on your tongue",
+        'answer': "Nine Thousand",
+    },
+    {
+        'question': " is the largest organ of the human body",
+        'answer': "Skin",
+    },
+    {
+        'question': "  part of the human body is effected in Astigmatism",
+        'answer': "Eyes",
+    },
+    {
+        'question': " fat-soluble substance present in green leafy vegetables was given its name because it is required for coagulation of the blood to take place?",
+        'answer': "Vitamin K",
     }
 ]
 
 window.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("idt-submit").addEventListener("click", clickButton);
     const fitb=document.getElementById("idt-fill-in-the-blank");
-    const ques = fitb.getElementsByTagName('h1');
+    const ques = fitb.getElementsByTagName('li');
     console.log(ques);
     if (ques.length !== idtQuestions.length) {
 
