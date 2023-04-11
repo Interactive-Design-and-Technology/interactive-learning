@@ -30,7 +30,7 @@ const idtQuestions = [
 
 window.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("idt-submit").addEventListener("click", clickButton);
-    const fitb=document.getElementById("idt-fill-in-the-blank");
+    const fitb = document.getElementById("idt-fill-in-the-blank");
     const ques = fitb.getElementsByTagName('li');
     console.log(ques);
     if (ques.length !== idtQuestions.length) {
@@ -49,7 +49,7 @@ function clickButton() {
     console.log("Clicked a Button");
     const answer = document.getElementById("idt-q1");
     const rightAnswer = document.getElementById("idt-op1");
-    
+
     const answer1 = document.getElementById("idt-q2");
     const rightAnswer1 = document.getElementById("idt-op2");
 
@@ -67,12 +67,6 @@ function clickButton() {
 
     const answer6 = document.getElementById("idt-q7");
     const rightAnswer6 = document.getElementById("idt-op7");
-
-
-
-
-
-
 
     console.log(answer.value);
     if (answer.value.toLowerCase().trim() === "hypertension") {
@@ -148,14 +142,4 @@ function clickButton() {
         rightAnswer6.classList.add("incorrect");
     }
 
-
-
-
-
-
-
-
-
 }
-
-
