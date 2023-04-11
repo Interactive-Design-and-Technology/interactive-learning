@@ -1,56 +1,50 @@
-h1{
+h1 {
     text-align: center;
 }
 
 
-img{
+img {
     width: 50%;
     height: 50%;
     margin-left: 25%;
 }
 
-#op2{
-color:blue;
-height:100px;
-width:200px;
-font-size: 25px;
-}
-
-.option-container button.correct{
-    color:green;
-}
-
-.option-container button.incorrect{
-    color:red;
-}
-
-
-
-.option-container button{
-    color:blue;
-    height:100px;
-    width:200px;
+#op2 {
+    color: blue;
+    height: 100px;
+    width: 200px;
     font-size: 25px;
+}
 
-    }
-  
+#idt-options button.correct {
+    color: green;
+}
+
+#idt-options button.incorrect {
+    color: red;
+}
+
+#idt-options button {
+    color: blue;
+    height: 100px;
+    width: 200px;
+    font-size: 25px;
+}
+
 textarea {
-	width:20%;
-	height:20%;
-		
-
-
+    width: 20%;
+    height: 20%
 }
-#idt-submit{
+
+#idt-submit {
     margin-left: 37%;
-    color:blue;
-    height:100px;
-    width:400px;
+    color: blue;
+    height: 100px;
+    width: 400px;
     font-size: 25px;
 }
 
-
-.option-container{
+#idt-options {
     margin: 10px;
     padding: 5px;
     width: 100%;
@@ -58,5 +52,5 @@ textarea {
     background-color: #c7dddf;
     font-size: 80%;
     text-align: center;
-     
+
 }
