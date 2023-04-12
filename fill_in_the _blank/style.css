@@ -16,11 +16,11 @@ img {
     font-size: 25px;
 }
 
-#idt-options button.correct {
+#idt-options div.correct {
     color: green;
 }
 
-#idt-options button.incorrect {
+#idt-options div.incorrect {
     color: red;
 }
 
@@ -46,11 +46,12 @@ textarea {
     text-align: center;
 
 }
- #answers{
+
+#idt-options div {
     color: rgb(54, 54, 173);
     height: 100px;
     width: 200px;
     font-size: 25px;
     display: inline-block;
     padding-top: 2%;
-} 
+}
