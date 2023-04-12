@@ -1,0 +1,57 @@
+h1 {
+    text-align: center;
+}
+
+
+img {
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+}
+
+#op2 {
+    color: blue;
+    height: 100px;
+    width: 200px;
+    font-size: 25px;
+}
+
+#idt-options div.correct {
+    color: green;
+}
+
+#idt-options div.incorrect {
+    color: red;
+}
+
+textarea {
+    width: 20%;
+    height: 20%
+}
+
+#idt-submit {
+    margin-left: 37%;
+    color: blue;
+    height: 100px;
+    width: 400px;
+    font-size: 25px;
+}
+
+#idt-options {
+    margin: 10px;
+    width: 100%;
+    height: 50%;
+    background-color: #c7dddf;
+    font-size: 80%;
+    text-align: center;
+
+}
+
+#idt-options div {
+    color: rgb(54, 54, 173);
+    height: 100px;
+    width: 200px;
+    font-size: 25px;
+    display: inline-block;
+    padding-top: 2%;
+}
