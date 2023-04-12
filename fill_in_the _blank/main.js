@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const options_list = document.getElementById('idt-options');
     // generate list of options
     for (let i = 0; i < idtQuestions.length; i++) {
-        options_list.innerHTML += `<button>${idtQuestions[i].answer}</button>`;
+        options_list.innerHTML += `<div id="answers">${idtQuestions[i].answer}</div>`;
     }
 });
 
