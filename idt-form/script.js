@@ -27,10 +27,20 @@ window.addEventListener("DOMContentLoaded", (event) => {
    let qaInput = idtMain.getElementsByTagName("input")
 
   //  loop through all the inputs to get the value and store them somewhere 
-  
+    let questionArray = []  
+
     for(i=0; i < qaInput.length; i = i + 2){
-      
+     let question = qaInput[i].value 
+     let answer = qaInput[i + 1].value
+
+      questionArray.push({
+        "question" : question,
+        "answer" : answer,
+      }, )
+
     }
+
+    console.log(questionArray)
   });
  
 });
