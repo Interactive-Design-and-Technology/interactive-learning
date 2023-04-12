@@ -41,6 +41,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
 
     console.log(questionArray)
+
+    for( i = 0; i < questionArray.length; i++){
+     genCode.innerHTML += `<br>${questionArray[i].question} <br> ${questionArray[i].answer}`
+    }
   });
  
 });
