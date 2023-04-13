@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+}
+
+.draggable {
+    background-color: yellow;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
+.dropzone {
+    background-color: lightblue;
+    padding: 20px;
+    margin: 20px;
+    min-height: 100px;
+}
