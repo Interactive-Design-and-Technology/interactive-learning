@@ -18,37 +18,41 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     console.log(idtMain.getElementsByTagName("input"))
   });
- 
+
   let idtGenBtn = document.getElementById('idt-generate');
   let genCode = document.getElementById("idt-generated-code");
 
-  idtGenBtn.addEventListener("click", (event)=> {
+  idtGenBtn.addEventListener("click", (event) => {
     // this helps grab all the information from the inputs before we add it to the code snipit 
-   let qaInput = idtMain.getElementsByTagName("input")
+    let qaInput = idtMain.getElementsByTagName("input")
 
-  //  loop through all the inputs to get the value and store them somewhere 
-    let questionArray = []  
+    //  loop through all the inputs to get the value and store them somewhere 
+    let questionArray = []
 
-    for(i=0; i < qaInput.length; i = i + 2){
-     let question = qaInput[i].value 
-     let answer = qaInput[i + 1].value
+    for (i = 0; i < qaInput.length; i = i + 2) {
+      let question = qaInput[i].value
+      let answer = qaInput[i + 1].value
 
       questionArray.push({
-        "question" : question,
-        "answer" : answer,
-      }, )
+        "question": question,
+        "answer": answer,
+      },)
 
     }
+
+    let codeInfo = ``
 
     console.log(questionArray)
 
-    for( i = 0; i < questionArray.length; i++){
-     genCode.innerHTML += `<br>
-     {
+    for (i = 0; i < questionArray.length; i++) {
+      codeInfo += `
+     <p>{
       'question' : '${questionArray[i].question}',
      'answer': '${questionArray[i].answer}'
-    },<br>`
+    },</p>
+    `
     }
+    genCode.innerHTML = `[${codeInfo}]`
   });
- 
+
 });
