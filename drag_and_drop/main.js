@@ -1,4 +1,24 @@
 window.addEventListener("DOMContentLoaded", (event) => {
+
+ // Define an array of question-answer pairs
+ const questions = [
+  {
+    question: "What is the capital of France?",
+    answer: "Paris"
+  },
+  {
+    question: "What is the largest planet in our solar system?",
+    answer: "Jupiter"
+  },
+  {
+    question: "Who is the author of 'To Kill a Mockingbird'?",
+    answer: "Harper Lee"
+  }
+];
+
+
+
+
   // Get references to the draggable answers and the dropzone
   const draggables = document.querySelectorAll(".answer");
   const dropzone = document.querySelector(".dropzone");
@@ -6,6 +26,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   // Set the initial score to 0
   let score = 0;
+
+// Select a random question from the questions array
+let currentQuestion = questions[Math.floor(Math.random() * questions.length)];
+
+// Display the current question in the dropzone
+dropzone.innerHTML = currentQuestion.question;
+dropzone.dataset.answer = currentQuestion.answer;
+
+
+
+
 
   // Add a dragstart event listener to each draggable answer
   draggables.forEach(draggable => {
