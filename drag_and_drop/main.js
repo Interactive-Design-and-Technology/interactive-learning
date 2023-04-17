@@ -14,14 +14,6 @@ draggables.forEach(draggable => {
   });
 });
 
-
-
-
-
-
-
-
-
 // Add a dragover event listener to the dropzone
 dropzone.addEventListener("dragover", event => {
   // Prevent default behavior to allow drop
