@@ -1,43 +1,43 @@
-#idt-form {
-    background-color: darkgray;
-    max-width: 50%;
-    margin: 0 25% 0 25%;
-    padding: 1em;
+* {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#idt-form h1,
-h3 {
+body {
+    background-color: darkgray;
+    max-width: 740px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+header, footer {
     text-align: center;
     background-color: lightgray;
+    padding: 0.5em;
 }
 
-#idt-form button {
+header h1, h2 {
+    margin: 0.25em;
+}
+
+main .description {
+    background-color: lightgray;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 10px;
+}
+
+button {
     margin: 0.5em;
+    display: block;
 }
 
-#idt-generated-code {
+#options, #question-answer {
+    margin: 1em;
+}
+
+#code {
     background-color: black;
     color: white;
     padding: 0.5em;
-    max-width: 50%;
-    margin: 0 25% 0 25%;
-}
-
-
-#idt-form a {
-    color: #000;
-}
-
-@media screen and (max-width: 700px){
-    #idt-form {
-        background-color: darkgray;
-        max-width: 100%;
-        padding: 1em;
-    }
-    #idt-generated-code {
-        background-color: black;
-        color: white;
-        padding: 0.5em;
-        max-width: 100%;
-    }
 }

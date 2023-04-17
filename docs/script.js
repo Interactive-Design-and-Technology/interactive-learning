@@ -1,27 +1,24 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed");
 
-  let idtAddBtn = document.getElementById('idt-add-btn');
+  let idtAddBtn = document.getElementById('add-question');
 
-  let idtMain = document.getElementById('idt-qas');
+  let idtMain = document.getElementById('question-answer');
 
   idtAddBtn.addEventListener("click", (event) => {
     idtMain.innerHTML += `
-    <br>
-      <label>Q:
-        <input type="text" name="question">
-      </label>
-    <br>
-      <label>A:
-        <input type="text" name="answer">
-      </label>
-    <br>`
+    <br><label>Question:
+      <input type="text" name="question">
+    </label><br>
+    <label>Answer:
+      <input type="text" name="answer">
+    </label><br>`
 
     console.log(idtMain.getElementsByTagName("input"))
   });
 
-  let idtGenBtn = document.getElementById('idt-generate');
-  let genCode = document.getElementById("idt-generated-code");
+  let idtGenBtn = document.getElementById('generate');
+  let genCode = document.getElementById("code");
 
   idtGenBtn.addEventListener("click", (event) => {
     // this helps grab all the information from the inputs before we add it to the code snipit 
