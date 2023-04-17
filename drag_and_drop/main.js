@@ -1,92 +1,85 @@
-// Your JavaScript code here
-      window.addEventListener("DOMContentLoaded", (event) => {
-        // Helper function to set a question
-        function setQuestion(question, index) {
-          let questionElement = document.querySelector(".question");
-          console.log(questionElement);
-        
-          // Set the question text and answer to the dropzone dataset
-          const draggables = document.querySelectorAll(".draggable");
-          console.log("hello ")
-          console.log(draggables)
-        
-          questionElement.innerHTML = `${index + 1}. ${question.question}`;
-          dropzone.dataset.answer = question.answer;
-        
-          // Append the answers to the question element
-          console.log("anmol")
-          console.log(question)
-          question.answer.forEach(answer => {
-            let answerElement = document.createElement("div");
-            answerElement.classList.add("draggable");
-            answerElement.dataset.answer = answer.toLowerCase();
-            answerElement.innerHTML = answer;
-            questionElement.appendChild(answerElement);
-          });
+/* Events fired on the drag target */
+window.addEventListener("DOMContentLoaded", (event) => {
+
+var dragP;
+/* Events fired on the drag target */
+
+document.addEventListener("dragstart", function (event) {
+    // The dataTransfer.setData() method sets the data type and the value of the dragged data
+    // event.dataTransfer.setData("Text", event.target.id);
+    dragP = event.target;
+
+    // Output some text when starting to drag the p element
+    document.getElementById("demo").innerHTML = "Started to drag the p element.";
+
+    // Change the opacity of the draggable element
+    event.target.style.opacity = "0.4";
+});
+
+// While dragging the p element, change the color of the output text
+document.addEventListener("drag", function (event) {
+    document.getElementById("demo").style.color = "red";
+});
+
+// Output some text when finished dragging the p element and reset the opacity
+document.addEventListener("dragend", function (event) {
+    document.getElementById("demo").innerHTML = "Finished dragging the p element.";
+    event.target.style.opacity = "1";
+});
+
+/* Events fired on the drop target */
+
+// When the draggable p element enters the droptarget, change the DIVS's border style
+document.addEventListener("dragenter", function (event) {
+    if (event.target.className == "droptarget") {
+        event.target.style.border = "3px dotted red";
+    }
+});
+
+// By default, data/elements cannot be dropped in other elements. To allow a drop, we must prevent the default handling of the element
+document.addEventListener("dragover", function (event) {
+    event.preventDefault();
+});
+
+// When the draggable p element leaves the droptarget, reset the DIVS's border style
+document.addEventListener("dragleave", function (event) {
+    if (event.target.className == "droptarget") {
+        event.target.style.border = "";
+    }
+});
+
+/* On drop - Prevent the browser default handling of the data (default is open as link on drop)
+   Reset the color of the output text and DIV's border-color
+   Get the dragged data with the dataTransfer.getData() method
+   The dragged data is the id of the dragged element ("drag1")
+   Append the dragged element into the drop element
+*/
+document.addEventListener("drop", function (event) {
+    event.preventDefault();
+    let targetDiv = event.target;
+    if (targetDiv.className == "droptarget") {
+        document.getElementById("demo").style.color = "";
+        targetDiv.style.border = "hidden";
+        if (targetDiv.childElementCount != 0){
+            let childP = targetDiv.getElementsByTagName("p")[0];
+            document.getElementById("answer").appendChild(childP);
         }
+        targetDiv.appendChild(dragP);
+        dragP = null;
+    }
+});
 
-        // Set the initial score to 0
-        let score = 0;
+document.getElementById("checkAnswer").addEventListener("click", function () {
+    let questions = document.getElementsByClassName("question");
+    let resultP = document.getElementById("result");
+    resultP.innerHTML = "";
+    for (let index = 0; index < questions.length; index++) {
+        const element = questions[index];
+        let childP = element.getElementsByTagName("p")[0];
+        let question = element.childNodes[0].textContent;
+        let answer = childP != undefined ? childP.innerText : "no answer";
+        resultP.append(`${question} : ${answer} ; `);
+    }
+})
 
-        // Define an array of questions and their correct answers
-        const questions = [
-          { question: "What is the capital of France?", answer: "paris" },
-          { question: "What is the largest country in the world?", answer: "russia" },
-          { question: "What is the currency of Japan?", answer: "yen" }
-        ];
-
-        // Get a reference to the question element inside the dropzone
-        const questionElement = document.querySelector("#question");
-        const dropzone = document.querySelector(".dropzone");
-
-        // Set the first question
-        let currentQuestionIndex = 0;
-        setQuestion(questions[currentQuestionIndex], currentQuestionIndex);
-
-        // Add a dragstart event listener to each draggable answer
-        console.log("number 2")
-        console.log(draggables)
-        draggables.forEach(draggable => {
-          draggable.addEventListener("dragstart", event => {
-    
-              // Set the drag data to the answer's dataset value
-              event.dataTransfer.setData("text/plain", event.target.dataset.answer);
-          });
-        });
-
-        // Add a dragover event listener to the dropzone
-        dropzone.addEventListener("dragover", event => {
-          // Prevent default behavior to allow drop
-          event.preventDefault();
-        });
-
-        // Add a drop event listener to the dropzone
-        dropzone.addEventListener("drop", event => {
-          // Prevent default behavior to allow drop
-          event.preventDefault();
-
-          // Get the answer from the drag data
-          const answer = event.dataTransfer.getData("text/plain");
-
-          // Check if the answer matches the dropzone's dataset value
-          if (answer === dropzone.dataset.answer) {
-              // If the answer is correct, increase the score and display a message
-              score++;
-              messageElement.innerHTML = `Correct! Your score is now ${score}.`;
-
-              // Remove the current question from the array of questions
-              questions.shift();
-              currentQuestionIndex++;
-
-              // If there are more questions, set the next question
-              if (questions.length > 0) {
-                  setQuestion(questions[currentQuestionIndex], currentQuestionIndex);
-              } else {
-                  // Otherwise, display a message that the game is over
-                  questionElement.innerHTML = "";
-                  messageElement.innerHTML = `Game over! Your final score`;}
-
-              }
-            }
-       )});
-
+});
