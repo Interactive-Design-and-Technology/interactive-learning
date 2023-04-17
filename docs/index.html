@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>IDT form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <section id="idt-form">
+        <h1>Interactive Learning Generator</h1>
+        <div>
+            <h3>A student project by <a href="https://github.com/Raunaq27" target=”_blank”>@Raunaq27</a> & <a
+                    href="https://github.com/Anmol135" target=”_blank”>@Anmol135</a> </h3>
+            <a href="https://github.com/Interactive-Design-and-Technology/interactive-learning" target="_blank">Github
+                link</a>
+            <p>This tool allows you to generate HTML, CSS, & JavaScript for interactive learning questions that can be
+                inserted into learning management systems.</p>
+            <form>
+                <label>Type:</label>
+                <select id="idt-type" name="idt-type" size="1">
+                    <option value="idt-click-to-reveal">click-to-reveal</option>
+                    <option value="idt-fill-in-the-blanks">fill-in-the-blanks</option>
+                    <option value="idt-drag-and-drop">drag-and-drop</option>
+                </select>
+            </form>
+
+            <div id="idt-qas"></div>
+
+            <button id="idt-add-btn">Add Question</button>
+            <button id="idt-generate">Generate</button>
+
+        </div>
+
+
+
+    </section>
+    <div id="idt-generated-code"></div>
+
+
+</body>
+
+</html>
