@@ -1,23 +1,12 @@
 window.addEventListener("DOMContentLoaded", (event) => {
 
- // Define an array of question-answer pairs
- const questions = [
-  {
-    question: "What is the capital of France?",
-    answer: "Paris"
-  },
-  {
-    question: "What is the largest planet in our solar system?",
-    answer: "Jupiter"
-  },
-  {
-    question: "Who is the author of 'To Kill a Mockingbird'?",
-    answer: "Harper Lee"
+  // Helper function to shuffle an array
+  function shuffle(something) {
+      for (let i = something.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [something[i], something[j]] = [something[j], something[i]];
+      }
   }
-];
-
-
-
 
   // Get references to the draggable answers and the dropzone
   const draggables = document.querySelectorAll(".answer");
@@ -27,48 +16,82 @@ window.addEventListener("DOMContentLoaded", (event) => {
   // Set the initial score to 0
   let score = 0;
 
-// Select a random question from the questions array
-let currentQuestion = questions[Math.floor(Math.random() * questions.length)];
+  // Define an array of questions and their correct answers
+  const questions = [
+      { question: "What is the capital of France?", answer: "paris" },
+      { question: "What is the largest country in the world?", answer: "russia" },
+      { question: "What is the currency of Japan?", answer: "yen" }
+  ];
 
-// Display the current question in the dropzone
-dropzone.innerHTML = currentQuestion.question;
-dropzone.dataset.answer = currentQuestion.answer;
+  // Get a reference to the question element inside the dropzone
+  const questionElement = document.querySelector("#question");
 
+  // Shuffle the order of the questions
+  shuffle(questions);
 
-
-
+  // Set the first question
+  setQuestion(questions[0]);
 
   // Add a dragstart event listener to each draggable answer
   draggables.forEach(draggable => {
-    draggable.addEventListener("dragstart", event => {
-      // Set the drag data to the answer's dataset value
-      event.dataTransfer.setData("text/plain", event.target.dataset.answer);
-    });
+      draggable.addEventListener("dragstart", event => {
+          // Set the drag data to the answer's dataset value
+          event.dataTransfer.setData("text/plain", event.target.dataset.answer);
+      });
   });
 
   // Add a dragover event listener to the dropzone
   dropzone.addEventListener("dragover", event => {
-    // Prevent default behavior to allow drop
-    event.preventDefault();
+      // Prevent default behavior to allow drop
+      event.preventDefault();
   });
 
   // Add a drop event listener to the dropzone
   dropzone.addEventListener("drop", event => {
-    // Prevent default behavior to allow drop
-    event.preventDefault();
+      // Prevent default behavior to allow drop
+      event.preventDefault();
 
-    // Get the answer from the drag data
-    const answer = event.dataTransfer.getData("text/plain");
+      // Get the answer from the drag data
+      const answer = event.dataTransfer.getData("text/plain");
 
-    // Check if the answer matches the dropzone's dataset value
-    if (answer === dropzone.dataset.answer) {
-      // If the answer is correct, increase the score and display a message
-      score++;
-      messageElement.innerHTML = `Correct! Your score is now ${score}.`;
-    } else {
-      // If the answer is incorrect, display a message
-      messageElement.innerHTML = "Incorrect. Try again.";
-    }
+      // Check if the answer matches the dropzone's dataset value
+      if (answer === dropzone.dataset.answer) {
+          // If the answer is correct, increase the score and display a message
+          score++;
+          messageElement.innerHTML = `Correct! Your score is now ${score}.`;
+
+          // Remove the current question from the array of questions
+          questions.shift();
+
+          // If there are more questions, set the next question
+          if (questions.length > 0) {
+              setQuestion(questions[0]);
+          } else {
+              // Otherwise, display a message that the game is over
+              questionElement.innerHTML = "";
+              messageElement.innerHTML = `Game over! Your final score is ${score}.`;
+          }
+      } else {
+          // If the answer is incorrect, display a message
+          messageElement.innerHTML = "Incorrect. Try again.";
+      }
   });
 
+
+  
 });
+// Helper function to set a question
+function setQuestion(question) {
+  // Set the question text and answer to the dropzone dataset
+  questionElement.innerHTML = question.question;
+  dropzone.dataset.answer = question.answer;
+
+  // Shuffle the order of the answers
+  const answers = Array.from(draggables);
+  shuffle(answers);
+
+  // Append the answers to the question element
+  answers.forEach(answer => {
+      questionElement.appendChild(answer);
+  });
+}
