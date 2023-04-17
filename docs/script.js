@@ -3,17 +3,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   let idtAddBtn = document.getElementById('idt-add-btn');
 
-  let idtMain = document.getElementById('idt-QAs');
+  let idtMain = document.getElementById('idt-qas');
 
   idtAddBtn.addEventListener("click", (event) => {
-    idtMain.innerHTML += `<br>
-    <label for="question">Q:
-    <input type="text" name="question">
-    </label>
+    idtMain.innerHTML += `
     <br>
-    <label for="answer">A:
-    <input type="text" name="answer">
-    </label>
+      <label>Q:
+        <input type="text" name="question">
+      </label>
+    <br>
+      <label>A:
+        <input type="text" name="answer">
+      </label>
     <br>`
 
     console.log(idtMain.getElementsByTagName("input"))
