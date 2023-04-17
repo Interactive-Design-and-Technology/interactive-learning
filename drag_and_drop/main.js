@@ -10,7 +10,7 @@ document.addEventListener("dragstart", function (event) {
     dragP = event.target;
 
     // Output some text when starting to drag the p element
-    document.getElementById("demo").innerHTML = "Started to drag the p element.";
+    // document.getElementById("demo").innerHTML = "Started to drag the p element.";
 
     // Change the opacity of the draggable element
     event.target.style.opacity = "0.4";
@@ -23,7 +23,7 @@ document.addEventListener("drag", function (event) {
 
 // Output some text when finished dragging the p element and reset the opacity
 document.addEventListener("dragend", function (event) {
-    document.getElementById("demo").innerHTML = "Finished dragging the p element.";
+    // document.getElementById("demo").innerHTML = "Finished dragging the p element.";
     event.target.style.opacity = "1";
 });
 
@@ -78,6 +78,7 @@ document.getElementById("checkAnswer").addEventListener("click", function () {
         let childP = element.getElementsByTagName("p")[0];
         let question = element.childNodes[0].textContent;
         let answer = childP != undefined ? childP.innerText : "no answer";
+        console.log(answer);
         resultP.append(`${question} : ${answer} ; `);
     }
 })
