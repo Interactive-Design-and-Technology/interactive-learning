@@ -5,13 +5,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
   let idtMain = document.getElementById('question-answer');
 
   idtAddBtn.addEventListener("click", (event) => {
-    idtMain.innerHTML += `
+
+    let newQuestion = document.createElement("div");
+
+    newQuestion.innerHTML += `
     <br><label>Question:
       <input type="text" name="question">
     </label><br>
     <label>Answer:
       <input type="text" name="answer">
     </label><br>`
+
+    idtMain.appendChild(newQuestion);
 
     console.log(idtMain.getElementsByTagName("input"))
   });
