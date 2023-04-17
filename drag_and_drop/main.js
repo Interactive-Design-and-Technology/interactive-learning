@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-
   // Helper function to shuffle an array
   function shuffle(something) {
       for (let i = something.length - 1; i > 0; i--) {
@@ -7,11 +6,32 @@ window.addEventListener("DOMContentLoaded", (event) => {
           [something[i], something[j]] = [something[j], something[i]];
       }
   }
-
+  // Helper function to set a question
+  function setQuestion(question) {
+    // let questionElement = document.getElementById('question');
+    // console.log(questionElement);
+    let questionElement = document.querySelector(".question");
+    console.log(questionElement);
+  
+    // Set the question text and answer to the dropzone dataset
+    questionElement.innerHTML = question.question;
+    dropzone.dataset.answer = question.answer;
+  
+    // Shuffle the order of the answers
+    const answers = Array.from(draggables);
+    shuffle(answers);
+  
+    // Append the answers to the question element
+    answers.forEach(answer => {
+        questionElement.appendChild(answer);
+    });
+  }
+  
   // Get references to the draggable answers and the dropzone
   const draggables = document.querySelectorAll(".answer");
   const dropzone = document.querySelector(".dropzone");
   const messageElement = document.querySelector("#message");
+
 
   // Set the initial score to 0
   let score = 0;
@@ -80,18 +100,4 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   
 });
-// Helper function to set a question
-function setQuestion(question) {
-  // Set the question text and answer to the dropzone dataset
-  questionElement.innerHTML = question.question;
-  dropzone.dataset.answer = question.answer;
 
-  // Shuffle the order of the answers
-  const answers = Array.from(draggables);
-  shuffle(answers);
-
-  // Append the answers to the question element
-  answers.forEach(answer => {
-      questionElement.appendChild(answer);
-  });
-}
