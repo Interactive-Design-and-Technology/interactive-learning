@@ -7,14 +7,20 @@
 </head>
 <body>
 	<h1>Drop the right answers to the correct area</h1>
-	<div class="question">
-		<p>What is the capital of France?</p>
-		<div class="answer" draggable="true">Paris</div>
-		<div class="answer" draggable="true">Russia</div>
-		<div class="answer" draggable="true">Yen</div>
+	<div class="question-container">
+		<div class="question" id="question"></div>
+		<div id="answers">
+
+	<br>
+		<div class="answers-container">
+		  <div class="draggable" data-answer="paris" draggable="true">Paris</div>
+		  <div class="draggable" data-answer="russia" draggable="true">Russia</div>
+		  <div class="draggable" data-answer="yen" draggable="true">Yen</div>
+		</div>
+	</div>
 	  </div>
 	  <div class="dropzone"></div>
-	  <p id="message"></p>
+	  <div class="message" id="message"></div>
 </body>
 </html>
 
