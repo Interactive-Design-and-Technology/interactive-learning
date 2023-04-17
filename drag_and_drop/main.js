@@ -7,11 +7,16 @@
         
           // Set the question text and answer to the dropzone dataset
           const draggables = document.querySelectorAll(".draggable");
+          console.log("hello ")
+          console.log(draggables)
+        
           questionElement.innerHTML = `${index + 1}. ${question.question}`;
           dropzone.dataset.answer = question.answer;
         
           // Append the answers to the question element
-          question.answers.forEach(answer => {
+          console.log("anmol")
+          console.log(question)
+          question.answer.forEach(answer => {
             let answerElement = document.createElement("div");
             answerElement.classList.add("draggable");
             answerElement.dataset.answer = answer.toLowerCase();
@@ -39,8 +44,11 @@
         setQuestion(questions[currentQuestionIndex], currentQuestionIndex);
 
         // Add a dragstart event listener to each draggable answer
+        console.log("number 2")
+        console.log(draggables)
         draggables.forEach(draggable => {
           draggable.addEventListener("dragstart", event => {
+    
               // Set the drag data to the answer's dataset value
               event.dataTransfer.setData("text/plain", event.target.dataset.answer);
           });
