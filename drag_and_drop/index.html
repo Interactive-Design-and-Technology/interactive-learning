@@ -3,15 +3,18 @@
 <head>
 	<title>Drag and Drop Example</title>
     <link rel="stylesheet" href="style.css">
-<script src="main.js"></script>
 </head>
-<h1>Drop the right answers to the correct area</h1>
-<body onload="init()">
-	<div class="draggable" id="drag1" draggable="true">Drag me!</div>
-	<div class="dropzone">Drop zone</div>
+<body>
+	<script src="main.js"></script>
+	<h1>Drop the right answers to the correct area</h1>
+	<div class="question">
+		<p>What is the capital of France?</p>
+		<div class="answer" draggable="true" data-answer="paris">Paris</div>
+		<div class="answer" draggable="true" data-answer="berlin">Berlin</div>
+		<div class="answer" draggable="true" data-answer="london">London</div>
+	  </div>
+	  <div class="dropzone" data-answer="paris"></div>
+	  <p id="message"></p>
 </body>
-    
-  
-
 </html>
 

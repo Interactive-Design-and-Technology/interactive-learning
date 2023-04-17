@@ -1,32 +1,54 @@
+// Get references to the draggable answers and the dropzone
+const draggables = document.querySelectorAll(".answer");
+const dropzone = document.querySelector(".dropzone");
+const messageElement = document.querySelector("#message");
 
-  function init() {
-    var draggables = document.querySelectorAll(".draggable");
-    var dropzone = document.querySelector(".dropzone");
-  
-    // add dragstart event listeners to all draggable elements
-    for (var i = 0; i < draggables.length; i++) {
-      draggables[i].addEventListener("dragstart", dragStart);
-    }
-  
-    // add dragover and drop event listeners to drop zone element
-    dropzone.addEventListener("dragover", allowDrop);
-    dropzone.addEventListener("drop", drop);
+// Set the initial score to 0
+let score = 0;
+
+// Add a dragstart event listener to each draggable answer
+draggables.forEach(draggable => {
+  draggable.addEventListener("dragstart", event => {
+    // Set the drag data to the answer's dataset value
+    event.dataTransfer.setData("text/plain", event.target.dataset.answer);
+  });
+});
+
+
+
+
+
+
+
+
+
+// Add a dragover event listener to the dropzone
+dropzone.addEventListener("dragover", event => {
+  // Prevent default behavior to allow drop
+  event.preventDefault();
+});
+
+// Add a drop event listener to the dropzone
+dropzone.addEventListener("drop", event => {
+  // Prevent default behavior to allow drop
+  event.preventDefault();
+
+  // Get the answer from the drag data
+  const answer = event.dataTransfer.getData("text/plain");
+
+  // Check if the answer matches the dropzone's dataset value
+  if (answer === dropzone.dataset.answer) {
+    // If the answer is correct, increase the score and display a message
+    score++;
+    messageElement.innerHTML = `Correct! Your score is now ${score}.`;
+  } else {
+    // If the answer is incorrect, display a message
+    messageElement.innerHTML = "Incorrect. Try again.";
   }
-  
-  function dragStart(ev) {
-    // set data for the drag operation
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
-  
-  function allowDrop(ev) {
-    // allow elements to be dropped into this zone
-    ev.preventDefault();
-  }
-  
-  function drop(ev) {
-    // get the data being dropped and append it to the drop zone
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-  }
-  
+});
+
+
+
+
+
+
