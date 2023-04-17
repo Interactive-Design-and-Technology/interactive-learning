@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Learning Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
@@ -25,6 +27,7 @@
         </p>
 
         <section id="options">
+            <h3>Options</h3>
             <label>Interactive Learning Type:</label>
             <select id="idt-type" name="idt-type" size="1">
                 <option value="idt-click-to-reveal">click-to-reveal</option>
@@ -34,6 +37,7 @@
         </section>
 
         <section id="question-answer">
+            <h3>Questions</h3>
             <label>Question:
                 <input type="text" name="question">
             </label><br>
@@ -43,12 +47,12 @@
         </section>
 
         <button id="add-question">Add Question</button>
-        <button id="generate">Generate</button>
+        <button id="generate">Generate Code</button>
     </main>
 
-    <section id="code">
-        // Generated code will go here.
-    </section>
+    <pre><code class="language-html" id="code">// Generated code will go here.</code></pre>
+
+    <button onclick="copyToClipboard()">Copy Code to Clipboard</button>
 
     <footer>
         <p>See the source code on <a href="https://github.com/Interactive-Design-and-Technology/interactive-learning"
