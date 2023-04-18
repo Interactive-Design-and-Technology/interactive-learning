@@ -11,12 +11,12 @@
   padding: 15px;
   margin: 10px;
   background: #eee;
-  border: 2px solid black;
+ 
   border-radius: 5px;
   box-sizing:border-box;
 }
 .dragtarget {
-  background-color: red;
+  background-color: rgb(36, 119, 94);
   padding: 5px;
   border-radius: 5px;
   color: #fff;
@@ -28,7 +28,7 @@
   padding: 15px;
   margin: 10px;
   background: #eee;
-  border: 2px solid black;
+
   border-radius: 5px;
   box-sizing:border-box;
 }
