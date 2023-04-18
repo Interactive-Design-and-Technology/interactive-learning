@@ -32,7 +32,7 @@ const idtQuestions = [
 /* Events fired on the drag target */
 window.addEventListener("DOMContentLoaded", (event) => {
 
-    for(i = 0 ; i < idtQuestions.length; i++){
+    for (i = 0; i < idtQuestions.length; i++) {
         document.getElementById('answer').innerHTML += `<p draggable="true" class="dragtarget" id="dragtarget">${idtQuestions[i].answer}</p>`
         document.getElementById('idt-q').innerHTML += ` <li class="question">${idtQuestions[i].question}<div class="droptarget" data-answer="${idtQuestions[i].answer}"></div>`
     }
@@ -107,28 +107,38 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     document.getElementById("checkAnswer").addEventListener("click", function () {
         let questions = document.getElementsByClassName("question");
-        let resultP = document.getElementById("result");
-        resultP.innerHTML = "";
+
         for (let index = 0; index < questions.length; index++) {
             const element = questions[index];
             let childP = element.getElementsByTagName("p")[0];
-            let question = element.childNodes[0].textContent;
             let answer = childP != undefined ? childP.innerText : "no answer";
             console.log(answer);
-            // resultP.append(`${question} : ${answer} ; `);
-           if(idtQuestions[index].answer === answer){
-            resultP.innerHTML +=(`${question} : ${answer} ;  is correct <br>`);
-           }
-           else
-           {resultP.innerHTML += (`${question} : ${answer} ;  is incorrect <br>`);}
-            
-
-    
-
+          
+            if (idtQuestions[index].answer === answer) {
+                
+                questions[index].innerHTML += `<br><span class="idt-correct"> ✅ Correct answer</span>`
+            }
+            else {
+               
+                questions[index].innerHTML += `<br><span class="idt-incorrect"> ❌ Incorrect answer</span>`
+            } 
         }
     })
 
-
+document.getElementById("reset-btn").addEventListener("click", () => {
+    let questions = document.getElementsByClassName("question");
+    for (let index = 0; index < questions.length; index++) {
+       
+            questions[index].innerHTML = ``
+            for (i = 0; i < idtQuestions.length; i++) {
+                document.getElementById('answer').innerHTML += `<p draggable="true" class="dragtarget" id="dragtarget">${idtQuestions[i].answer}</p>`
+                document.getElementById('idt-q').innerHTML += ` <li class="question">${idtQuestions[i].question}<div class="droptarget" data-answer="${idtQuestions[i].answer}"></div>`
+          
+        
+        }
+        
+    }
+})
 });
 
 // function showDetails(animal) {
