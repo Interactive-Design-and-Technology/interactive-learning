@@ -1,27 +1,28 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed");
 
-  let idtAddBtn = document.getElementById('idt-add-btn');
-
-  let idtMain = document.getElementById('idt-qas');
+  let idtAddBtn = document.getElementById('add-question');
+  let idtMain = document.getElementById('question-answer');
 
   idtAddBtn.addEventListener("click", (event) => {
-    idtMain.innerHTML += `
-    <br>
-      <label>Q:
-        <input type="text" name="question">
-      </label>
-    <br>
-      <label>A:
-        <input type="text" name="answer">
-      </label>
-    <br>`
+
+    let newQuestion = document.createElement("div");
+
+    newQuestion.innerHTML += `
+    <br><label>Question:
+      <input type="text" name="question">
+    </label><br>
+    <label>Answer:
+      <input type="text" name="answer">
+    </label><br>`
+
+    idtMain.appendChild(newQuestion);
 
     console.log(idtMain.getElementsByTagName("input"))
   });
 
-  let idtGenBtn = document.getElementById('idt-generate');
-  let genCode = document.getElementById("idt-generated-code");
+  let idtGenBtn = document.getElementById('generate');
+  let genCode = document.getElementById("code");
 
   idtGenBtn.addEventListener("click", (event) => {
     // this helps grab all the information from the inputs before we add it to the code snipit 
@@ -42,18 +43,30 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
 
     let codeInfo = ``
-
     console.log(questionArray)
 
     for (i = 0; i < questionArray.length; i++) {
-      codeInfo += `
-     <p>{
-      'question' : '${questionArray[i].question}',
-     'answer': '${questionArray[i].answer}'
-    },</p>
-    `
+      codeInfo += `  {'question' : '${questionArray[i].question}','answer': '${questionArray[i].answer}'},\n`
     }
-    genCode.innerHTML = `[${codeInfo}]`
-  });
 
+    fetch('./test.js')
+      .then(response => response.text())
+      .then(data => {
+        genCode.innerHTML = `&lt;script&gt;\nconst questions = [\n${codeInfo}];\n${data}&lt;/script&gt;`
+        genCode.innerHTML += `\n&lt;div id='idt-interactive-learning'&gt;&lt;/div&gt;`;
+        Prism.highlightAll();
+      })
+      .catch(error => console.error(error));
+  });
 });
+
+function copyToClipboard() {
+  const code = document.getElementById('code').innerText;
+  navigator.clipboard.writeText(code)
+    .then(() => {
+      console.log('Code copied to clipboard successfully!');
+    })
+    .catch(err => {
+      console.error('Failed to copy code: ', err);
+    });
+}
