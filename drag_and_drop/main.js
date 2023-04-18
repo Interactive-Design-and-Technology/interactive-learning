@@ -82,5 +82,7 @@ document.getElementById("checkAnswer").addEventListener("click", function () {
         resultP.append(`${question} : ${answer} ; `);
     }
 })
+console.log(document.getAttribute("data-answer"))
+
 
 });
