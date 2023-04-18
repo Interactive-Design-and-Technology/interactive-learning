@@ -48,7 +48,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
     for (i = 0; i < questionArray.length; i++) {
       codeInfo += `  {'question' : '${questionArray[i].question}','answer': '${questionArray[i].answer}'},\n`
     }
-    genCode.innerHTML = `[\n${codeInfo}]`
+
+    fetch('./test.js')
+      .then(response => response.text())
+      .then(data => {
+        genCode.innerHTML = `&lt;script&gt;\nconst questions = [\n${codeInfo}];\n${data}&lt;/script&gt;`
+        genCode.innerHTML += `\n&lt;div id='idt-interactive-learning'&gt;&lt;/div&gt;`;
+        Prism.highlightAll();
+      })
+      .catch(error => console.error(error));
   });
 });
 
