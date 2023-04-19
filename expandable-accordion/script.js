@@ -1,8 +1,29 @@
+const questions = [
+    {
+        'question': 'Have you heard about the chocolate record player? ',
+        'answer': 'It sounds pretty sweet.'
+    },
+    {
+        'question': 'What do you call a factory that makes okay products?',
+        'answer': 'A satisfactory.'
+    },
+    {
+        'question': 'What did one wall say to the other?',
+        'answer': "I'll meet you at the corner."
+    }
+]
+
 window.addEventListener("DOMContentLoaded", (event) => {
 
-    let 
+    let accordionId = document.getElementById("idt-accordion")
 
-
+    for(i = 0; i < questions.length; i++){
+        accordionId.innerHTML += `
+        <button class="accordion">${questions[i].question}</button>
+        <div class="panel">
+            <p>${questions[i].answer}</p>
+        </div>`
+    }
 
     var acc = document.getElementsByClassName("accordion");
     var i;
