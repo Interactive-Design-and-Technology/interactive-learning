@@ -1,7 +1,7 @@
 
-function idtFillBlank(idtQuestions) {
+function idtGenerate(idtQuestions) {
 
-    const main_container = document.getElementById("idt-fill-in-the-blank");
+    const main_container = document.getElementById("idt-interactive-learning");
     main_container.innerHTML = `
         <h1>Type all the answers in the blanks and click submit button to see if your answers are wrong or right </h1>
         <ol id="idt-questions"></ol>

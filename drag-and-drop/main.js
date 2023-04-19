@@ -1,6 +1,6 @@
-function idtDragDrop(idtQuestions) {
+function idtGenerate(idtQuestions) {
 
-  const main_container = document.getElementById("idt-drag-drop");
+  const main_container = document.getElementById("idt-interactive-learning");
   main_container.innerHTML = `
     <ol class="domande" id="idt-q"></ol>
     <div class="container" id="answer"></div>

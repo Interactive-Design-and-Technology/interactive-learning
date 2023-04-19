@@ -1,4 +1,4 @@
-function idtClickToReveal(questions) {
+function idtGenerate(questions) {
 
     const main_container = document.getElementById("idt-interactive-learning");
     main_container.innerHTML = `
