@@ -1,26 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Drag and Drop Example</title>
 	<link rel="stylesheet" href="style.css">
-	<script src="main.js"></script>
-	<meta charset="UTF-8">
+	<script src="./main.js"></script>
+	<script>
+		const questions = [
+			{
+				'question': "is the medical term for High Blood Pressure?",
+				'answer': "hypertension",
+			}, {
+				'question': " is medical term for itch caused by mites?",
+				'answer': "scabies",
+			},
+			{
+				'question': " percentage of the human body is water?",
+				'answer': "66%",
+			},
+			{
+				'question': " is the number of taste buds are on your tongue",
+				'answer': "Nine Thousand",
+			},
+			{
+				'question': " is the largest organ of the human body",
+				'answer': "Skin",
+			},
+			{
+				'question': "  part of the human body is effected in Astigmatism",
+				'answer': "Eyes",
+			},
+			{
+				'question': " fat-soluble substance present in green leafy vegetables was given its name because it is required for coagulation of the blood to take place?",
+				'answer': "Vitamin K",
+			},
+		]
+
+		window.addEventListener("DOMContentLoaded", (event) => {
+			idtDragDrop(questions);
+		});
+	</script>
 </head>
 
 <body>
-	<section id="drag-and-drop">
-		<h1> Drag and Drop the right answer</h1>
-		<ol class="domande" id="idt-q">
-		</ol>
-		<div class="container" id="answer">
-		</div>
-		<p id="demo"></p>
-		<button id="checkAnswer">Check</button>
-		<button id="reset-btn">Reset</button>
-		<!-- <button>Check</button> -->
-		<p id="result"></p>
-	</section>
+	<h1> Drag and Drop the right answer</h1>
+	<section id="idt-drag-drop"></section>
 </body>
 
 </html>
