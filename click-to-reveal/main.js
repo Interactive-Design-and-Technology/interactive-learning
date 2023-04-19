@@ -1,20 +1,13 @@
-const questions = [
-    {
-        'question': 'Have you heard about the chocolate record player? ',
-        'answer': 'It sounds pretty sweet.'
-    },
-    {
-        'question': 'What do you call a factory that makes okay products?',
-        'answer': 'A satisfactory.'
-    },
-    {
-        'question': 'What did one wall say to the other?',
-        'answer': "I'll meet you at the corner."
-    }
-]
+function idtClickToReveal(questions) {
 
-window.addEventListener("DOMContentLoaded", (event) => {
-    console.log("DOM fully loaded and parsed");
+    const main_container = document.getElementById("idt-interactive-learning");
+    main_container.innerHTML = `
+        <div>
+            <div id="idt-btn-container"></div>
+            <div id="idt-ans-container">
+                <p>Click the buttons on the left to show the answers for the questions</p>
+            </div>
+        </div>`;
 
     let btnContainer = document.getElementById("idt-btn-container")
     for (let i = 0; i < questions.length; i++) {
@@ -22,7 +15,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
 
     const buttons = btnContainer.getElementsByTagName('button');
-    console.log(buttons);
 
     // Loop through all buttons
     // Remove "idt-active-btn" from all other buttons
@@ -32,24 +24,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
             console.log(`button clicked ${x}`);
             deactivateAllButtons(buttons);
             activateButton(buttons[x]);
-            textChange(questions[x].answer);
+            document.getElementById('idt-ans-container').innerHTML = `<p> ${questions[x].answer} </p>`
         });
     }
-});
 
-// Add "idt-active-btn" to the current/clicked button
-function activateButton(button) {
-    button.classList.add("idt-active-btn");
-}
-
-// Remove "idt-active-btn" from all other buttons
-function deactivateAllButtons(buttons) {
-    for (let x = 0; x < buttons.length; x++) {
-        buttons[x].classList.remove("idt-active-btn");
+    // Add "idt-active-btn" to the current/clicked button
+    function activateButton(button) {
+        button.classList.add("idt-active-btn");
     }
-}
 
-// Change the text in the container
-function textChange(text) {
-    document.getElementById('idt-ans-container').innerHTML = `<p> ${text} </p>`
+    // Remove "idt-active-btn" from all other buttons
+    function deactivateAllButtons(buttons) {
+        for (let x = 0; x < buttons.length; x++) {
+            buttons[x].classList.remove("idt-active-btn");
+        }
+    }
 }
