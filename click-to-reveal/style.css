@@ -1,51 +1,37 @@
-body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-#idt-click-to-reveal {
+#idt-interactive-learning {
     background-color: blueviolet;
-    max-width: 70%;
-    padding: 1em;
-    
 }
 
-#idt-click-to-reveal div:first-of-type {
+#idt-interactive-learning div:first-of-type {
     display: flex;
-  }
+}
 
-  #idt-click-to-reveal div div{
+#idt-interactive-learning div div {
     align-self: center;
     margin: 1em;
     display: flex;
     flex-direction: column;
 }
 
-
-#idt-click-to-reveal button.idt-active-btn{
-    
+#idt-interactive-learning button.idt-active-btn {
     background-color: white;
     color: black;
-    padding: 1em 2em 1em 2em ;
+    padding: 1em 2em 1em 2em;
     margin: 0.5em;
     border: none;
 }
-#idt-click-to-reveal button  {
-    
+
+#idt-interactive-learning button {
     background-color: black;
     color: white;
-    padding: 1em 2em 1em 2em ;
+    padding: 1em 2em 1em 2em;
     margin: 0.5em;
     border: none;
 }
 
-h1, p{
-    text-align: center;
-    color: white;
-}
-
-@media screen and (max-width: 700px){
-    #idt-click-to-reveal div:first-of-type {
+@media screen and (max-width: 740px) {
+    #idt-interactive-learning div:first-of-type {
         display: flex;
         flex-direction: column;
-      }
+    }
 }
