@@ -42,11 +42,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   document.addEventListener("dragstart", function (event) {
     // The dataTransfer.setData() method sets the data type and the value of the dragged data
-    // event.dataTransfer.setData("Text", event.target.id);
     dragP = event.target;
-
-    // Output some text when starting to drag the p element
-    // document.getElementById("demo").innerHTML = "Started to drag the p element.";
 
     // Change the opacity of the draggable element
     event.target.style.opacity = "0.4";
