@@ -4,24 +4,49 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
     <title>Fill in the Blank</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./main.js"></script>
+    <script>
+        const questions = [
+            {
+                'question': "is the medical term for High Blood Pressure?",
+                'answer': "hypertension",
+            }, {
+                'question': " is medical term for itch caused by mites?",
+                'answer': "scabies",
+            },
+            {
+                'question': " percentage of the human body is water?",
+                'answer': "66%",
+            },
+            {
+                'question': " is the number of taste buds are on your tongue",
+                'answer': "Nine Thousand",
+            },
+            {
+                'question': " is the largest organ of the human body",
+                'answer': "Skin",
+            },
+            {
+                'question': "  part of the human body is effected in Astigmatism",
+                'answer': "Eyes",
+            },
+            {
+                'question': " fat-soluble substance present in green leafy vegetables was given its name because it is required for coagulation of the blood to take place?",
+                'answer': "Vitamin K",
+            },
+        ]
+
+        window.addEventListener("DOMContentLoaded", (event) => {
+            idtFillBlank(questions);
+        });
+    </script>
 </head>
 
 <body>
-    <h1>Interactive Fill in the blank Science Quiz</h1>
-    <img src="quiz.png">
-
-    <section id="idt-fill-in-the-blank">
-        <h1>Type all the answers in the blanks and click submit button to see if your answers are wrong or right </h1>
-        <ol id="idt-questions"></ol>
-        <div id="idt-options"></div>
-        <div>
-            <button id="idt-submit">Click to Submit Answers</button>
-        </div>
-
-    </section>
+    <h1>Interactive Fill in the Blank Quiz</h1>
+    <section id="idt-fill-in-the-blank"></section>
 </body>
 
 </html>
