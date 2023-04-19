@@ -49,7 +49,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
       codeInfo += `  {'question' : '${questionArray[i].question}','answer': '${questionArray[i].answer}'},\n`
     }
 
-    fetch('./test.js')
+
+    const dropdown = document.getElementById("idt-type");
+    const selectedOption = dropdown.options[dropdown.selectedIndex].value;
+    console.log(selectedOption);
+
+    fetch(`./${selectedOption}/main.js`)
       .then(response => response.text())
       .then(data => {
         genCode.innerHTML = `&lt;script&gt;\nconst questions = [\n${codeInfo}];\n${data}&lt;/script&gt;`
