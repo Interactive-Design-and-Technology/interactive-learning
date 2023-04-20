@@ -4,19 +4,19 @@
     width: 40px;
     height: 40px;
   }
-  .droppable {
+  /* .droppable {
     background-color: white;
     border: 1px solid black;
     padding: 10px;
-  }
+  } */
 
-  .droppable.drag-over {
+  /* .droppable.drag-over {
     background-color: lightblue;
-  }
+  } */
 
-  .droppable.dropped {
+  /* .droppable.dropped {
     background-color: lightgreen;
-  }
+  } */
 
   #droppable1, #droppable2{
 	width: 245px;
@@ -78,4 +78,9 @@ top:190px;
     margin: -134px auto -65px 18px;
     transform: perspective(500px) rotateX(75deg);
     width: 202px;
+}
+
+.draggable{
+    border: 1px solid black;
+    padding: 10px;
 }
