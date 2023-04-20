@@ -1,17 +1,13 @@
 .card {
 background-color: indianred;
-width: 75%;
-height: 90%;
+height: 25rem;
+width: 15rem;
   }
   .card:hover {
     background-color: rgb(98, 43, 134);
-    width: 75%;
-    height: 90%;
+    height: 25rem;
+    width: 15rem;
   }
-  .card_front_side{
-    background-color: rgb(144, 163, 59);
-    width: 65%;
-    height: 80%
-  }
-  
-  
+h3{
+    text-align: center;
+}
