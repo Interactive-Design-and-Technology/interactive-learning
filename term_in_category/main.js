@@ -1,39 +1,40 @@
+window.addEventListener("DOMContentLoaded", (event) => {
 
-  window.addEventListener("DOMContentLoaded", (event) => {
+  let draggables = document.getElementsByClassName("draggable");
 
-      var draggables = document.getElementsByClassName("draggable");
+  for (let i = 0; i < draggables.length; i++) {
+    draggables[i].addEventListener("dragstart", function (event) {
+      event.dataTransfer.setData("text", event.target.id);
+    });
+  }
 
-      for (var i = 0; i < draggables.length; i++) {
-        draggables[i].addEventListener("dragstart", function (event) {
-          event.dataTransfer.setData("text", event.target.id);
-        });
+  let droppables = document.getElementsByClassName("droppable");
+
+  for (let i = 0; i < droppables.length; i++) {
+    droppables[i].addEventListener("dragover", function (event) {
+      event.preventDefault();
+      if (event.target.classList.contains("droppable")) {
+        event.target.classList.add("drag-over");
       }
+    });
 
-
-      var droppables = document.getElementsByClassName("droppable");
-
-      for (var i = 0; i < droppables.length; i++) {
-        droppables[i].addEventListener("dragover", function (event) {
-          event.preventDefault();
-          event.target.classList.add("drag-over");
-        });
-
-        droppables[i].addEventListener("dragleave", function (event) {
-          event.target.classList.remove("drag-over");
-        });
-
-        droppables[i].addEventListener("drop", function (event) {
-          var id = event.dataTransfer.getData("text");
-          var draggableElement = document.getElementById(id);
-          event.target.appendChild(draggableElement);
-          event.target.classList.remove("drag-over");
-          event.target.classList.add("dropped");
-          setTimeout(function () {
-            event.target.classList.remove("dropped");
-          }, 1000);
-        });
+    droppables[i].addEventListener("dragleave", function (event) {
+      if (event.target.classList.contains("droppable")) {
+        event.target.classList.remove("drag-over");
       }
+    });
 
+    droppables[i].addEventListener("drop", function (event) {
+      let id = event.dataTransfer.getData("text");
+      let draggableElement = document.getElementById(id);
 
-
+      if (event.target.classList.contains("draggable")) {
+        event.target.parentElement.appendChild(draggableElement);
+      } else if (event.target.classList.contains("droppable")) {
+        event.target.appendChild(draggableElement);
+      }
+ 
+      event.target.classList.remove("drag-over");
+    });
+  }
 });
