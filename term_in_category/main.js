@@ -1,39 +1,39 @@
-const idtQuestions = [
-    {
-      'question': "is the medical term for High Blood Pressure?",
-      'answer': "hypertension",
-    }, {
-      'question': " is medical term for itch caused by mites?",
-      'answer': "scabies",
-    },
-    {
-      'question': " percentage of the human body is water?",
-      'answer': "66%",
-    },
-    {
-      'question': " is the number of taste buds are on your tongue",
-      'answer': "Nine Thousand",
-    },
-    {
-      'question': " is the largest organ of the human body",
-      'answer': "Skin",
-    },
-    {
-      'question': "  part of the human body is effected in Astigmatism",
-      'answer': "Eyes",
-    },
-    {
-      'question': " fat-soluble substance present in green leafy vegetables was given its name because it is required for coagulation of the blood to take place?",
-      'answer': "Vitamin K",
-    },
-  ]
-  
-  
-  /* Events fired on the drag target */
+
   window.addEventListener("DOMContentLoaded", (event) => {
-  
-    for (i = 0; i < idtQuestions.length; i++) {
-        document.getElementById('idt-questions').innerHTML += `<p class="drag" draggable="true">${idtQuestions[i].question}</p>`
+
+      var draggables = document.getElementsByClassName("draggable");
+
+      for (var i = 0; i < draggables.length; i++) {
+        draggables[i].addEventListener("dragstart", function (event) {
+          event.dataTransfer.setData("text", event.target.id);
+        });
       }
+
+
+      var droppables = document.getElementsByClassName("droppable");
+
+      for (var i = 0; i < droppables.length; i++) {
+        droppables[i].addEventListener("dragover", function (event) {
+          event.preventDefault();
+          event.target.classList.add("drag-over");
+        });
+
+        droppables[i].addEventListener("dragleave", function (event) {
+          event.target.classList.remove("drag-over");
+        });
+
+        droppables[i].addEventListener("drop", function (event) {
+          var id = event.dataTransfer.getData("text");
+          var draggableElement = document.getElementById(id);
+          event.target.appendChild(draggableElement);
+          event.target.classList.remove("drag-over");
+          event.target.classList.add("dropped");
+          setTimeout(function () {
+            event.target.classList.remove("dropped");
+          }, 1000);
+        });
+      }
+
+
 
 });
