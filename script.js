@@ -49,10 +49,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
       codeInfo += `  {'question' : '${questionArray[i].question}','answer': '${questionArray[i].answer}'},\n`
     }
 
-    fetch('./test.js')
+
+    const dropdown = document.getElementById("idt-type");
+    const selectedOption = dropdown.options[dropdown.selectedIndex].value;
+    console.log(selectedOption);
+
+    fetch(`./${selectedOption}/main.js`)
       .then(response => response.text())
       .then(data => {
-        genCode.innerHTML = `&lt;script&gt;\nconst questions = [\n${codeInfo}];\n${data}&lt;/script&gt;`
+        const clean_data = data.replace(/[<>]/g, char => char === '<' ? '&lt;' : '&gt;');
+        const dom_code = `window.addEventListener("DOMContentLoaded", (event) => {idtGenerate(questions);});`
+        genCode.innerHTML = `&lt;script&gt;\nconst questions = [\n${codeInfo}];\n${clean_data}\n${dom_code}\n&lt;/script&gt;`
         genCode.innerHTML += `\n&lt;div id='idt-interactive-learning'&gt;&lt;/div&gt;`;
         Prism.highlightAll();
       })

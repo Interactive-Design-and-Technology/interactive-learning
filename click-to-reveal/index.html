@@ -2,27 +2,36 @@
 <html lang="en">
 
 <head>
-    <title>Click to reveal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Reveal</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+    <script src="./main.js"></script>
+    <script>
+        const questions = [
+            {
+                'question': 'Have you heard about the chocolate record player? ',
+                'answer': 'It sounds pretty sweet.'
+            },
+            {
+                'question': 'What do you call a factory that makes okay products?',
+                'answer': 'A satisfactory.'
+            },
+            {
+                'question': 'What did one wall say to the other?',
+                'answer': "I'll meet you at the corner."
+            }
+        ];
+
+        window.addEventListener("DOMContentLoaded", (event) => {
+            idtGenerate(questions);
+        });
+    </script>
 </head>
 
 <body>
-
-    <section id="idt-click-to-reveal">
-        <h1>Click to reveal</h1>
-        <div>
-
-            <div id="idt-btn-container">
-
-            </div>
-            <div id="idt-ans-container">
-                <p>Click the buttons on the left to show the answers for the questions</p>
-            </div>
-        </div>
-    </section>
-
-
+    <h1>Click to Reveal</h1>
+    <section id="idt-interactive-learning"></section>
 </body>
 
 </html>
