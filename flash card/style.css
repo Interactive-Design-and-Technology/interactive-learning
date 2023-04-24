@@ -1,4 +1,4 @@
-/* .maincontainer{
+.maincontainer{
     position:absolute;
     width:100%;
     height:100%;
@@ -6,14 +6,13 @@
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-} */
+}
 .card{
-    /* position: relative; */
+    position: relative;
     width: 300px;;
-    height:100%;
+    height:100px;
     transform-style: preserve-3d;
     transition: all 0.8s ease;
-
 }
 .front{
     position: absolute;
@@ -36,4 +35,34 @@
 }
 .flipCard{
     transform: rotateY(180deg);
+}
+.front-two{
+    position: absolute;
+    width:300px;
+    height:400px;
+    backface-visibility: hidden;
+    background-color: rgb(54, 187, 147);
+    color: black;
+    text-align: center;
+    margin-left: 400px;
+}
+.back-two{
+    position: absolute;
+    width:300px;
+    height:400px;
+    background-color: rgb(192, 68, 10);
+    backface-visibility: hidden;
+    color: rgb(85, 40, 40);
+    text-align: center;
+    transform: rotateY(180deg);
+}
+.flipCard-two{
+    transform: rotateY(180deg);
+}
+.card-two{
+    position: absolute;
+    width: 300px;;
+    height:400px;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
 }
