@@ -35,7 +35,7 @@ h1,h2{
 .flipCard{
     transform: rotateY(180deg);
 }
-.card:nth-child(2) .front,:nth-child(3) .front,:nth-child(4) .front{
+.card:nth-child(2) .front,:nth-child(3) .front,:nth-child(4) .front, :nth-child(5) .front{
     background-color: #9662d1;
     color: white;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -44,7 +44,7 @@ h1,h2{
     transition: 0.3s;
     border-radius: 10px; /* 5px rounded corners */
 }
-.card:nth-child(2) .back,:nth-child(3) .back,:nth-child(4) .back{
+.card:nth-child(2) .back,:nth-child(3) .back,:nth-child(4) .back, :nth-child(5) .back{
     background-color: white;
     color: #6836a1;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -84,6 +84,9 @@ body
   width:80px;
 }
 .flipCard-three{
+    transform: rotateY(180deg);
+}
+.flipCard-four{
     transform: rotateY(180deg);
 }
 
