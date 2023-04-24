@@ -1,33 +1,22 @@
-/* .maincontainer{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:none;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-} */
 h1,h2{
     text-align: center;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    
-
 }
-
 .card{
     position: relative;
     width: 300px;;
     transform-style: preserve-3d;
     transition: all 0.8s ease;
     display: inline-block;
+
 }
 .front{
     position: absolute;
     width:300px;
     height:400px;
     backface-visibility: hidden;
-    background-color: rgb(172, 172, 86);
+    background-color: #9662d1;
     color: black;
     text-align: center;
 }
@@ -35,7 +24,7 @@ h1,h2{
     position: absolute;
     width:300px;
     height:400px;
-    background-color: rgb(155, 12, 180);
+    background-color: white;
     backface-visibility: hidden;
     color: rgb(85, 40, 40);
     text-align: center;
@@ -44,13 +33,23 @@ h1,h2{
 .flipCard{
     transform: rotateY(180deg);
 }
-.card:nth-child(2) .front{
-    background-color: rgb(54, 187, 147);
-    color: black;
+.card:nth-child(2) .front,:nth-child(3) .front{
+    background-color: #9662d1;
+    color: white;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px; /* 5px rounded corners */
 }
-.card:nth-child(2) .back{
-    background-color: rgb(192, 68, 10);
-    color: rgb(85, 40, 40);
+.card:nth-child(2) .back,:nth-child(3) .back{
+    background-color: white;
+    color: #6836a1;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px; /* 5px rounded corners */
 }
 .flipCard-two{
     transform: rotateY(180deg);
@@ -59,7 +58,6 @@ body
 {
   background-color:#6836a1;
 }
-
 #button
 {
   position:relative;
@@ -76,7 +74,6 @@ body
   font-weight:bold;
   color:black;
 }
-
 #button:hover
 {
   background-color:#EFF1F3;
@@ -84,5 +81,10 @@ body
   font-size: 25px;
   width:80px;
 }
-
+/* .front_question{
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    padding-top: 50px;
+} */
 
