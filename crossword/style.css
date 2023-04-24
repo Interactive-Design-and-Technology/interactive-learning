@@ -1,0 +1,12 @@
+td {
+  border: 2px black;
+  width: 20px;
+}
+
+.hidden {
+  border: none;
+}
+
+input{
+  width: 20px;
+}
