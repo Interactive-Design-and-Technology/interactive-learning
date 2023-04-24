@@ -7,12 +7,20 @@
     left:50%;
     transform: translate(-50%, -50%);
 } */
+h1,h2{
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+
+}
+
 .card{
     position: relative;
     width: 300px;;
-    height:100px;
     transform-style: preserve-3d;
     transition: all 0.8s ease;
+    display: inline-block;
 }
 .front{
     position: absolute;
@@ -36,33 +44,45 @@
 .flipCard{
     transform: rotateY(180deg);
 }
-.front-two{
-    position: absolute;
-    width:300px;
-    height:400px;
-    backface-visibility: hidden;
+.card:nth-child(2) .front{
     background-color: rgb(54, 187, 147);
     color: black;
-    text-align: center;
-    margin-left: 400px;
 }
-.back-two{
-    position: absolute;
-    width:300px;
-    height:400px;
+.card:nth-child(2) .back{
     background-color: rgb(192, 68, 10);
-    backface-visibility: hidden;
     color: rgb(85, 40, 40);
-    text-align: center;
-    transform: rotateY(180deg);
 }
 .flipCard-two{
     transform: rotateY(180deg);
 }
-.card-two{
-    position: absolute;
-    width: 300px;;
-    height:400px;
-    transform-style: preserve-3d;
-    transition: all 0.8s ease;
+body
+{
+  background-color:#6836a1;
 }
+
+#button
+{
+  position:relative;
+  top:100px;
+  left:50vw;
+  margin-left:-30px;
+  width:60px;
+  font-size:16px;
+  padding:20px;
+  background-color:white;
+  border-radius:10px;
+  font-family:arial;
+  text-decoration:none;
+  font-weight:bold;
+  color:black;
+}
+
+#button:hover
+{
+  background-color:#EFF1F3;
+  color:#6836a1;
+  font-size: 25px;
+  width:80px;
+}
+
+
