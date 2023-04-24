@@ -1,8 +1,10 @@
 h1,h2{
     text-align: center;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-top: 15px;
 }
+
 .card{
     position: relative;
     width: 300px;;
@@ -33,7 +35,7 @@ h1,h2{
 .flipCard{
     transform: rotateY(180deg);
 }
-.card:nth-child(2) .front,:nth-child(3) .front{
+.card:nth-child(2) .front,:nth-child(3) .front,:nth-child(4) .front{
     background-color: #9662d1;
     color: white;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -42,7 +44,7 @@ h1,h2{
     transition: 0.3s;
     border-radius: 10px; /* 5px rounded corners */
 }
-.card:nth-child(2) .back,:nth-child(3) .back{
+.card:nth-child(2) .back,:nth-child(3) .back,:nth-child(4) .back{
     background-color: white;
     color: #6836a1;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -62,7 +64,7 @@ body
 {
   position:relative;
   top:100px;
-  left:50vw;
+  left:48vw;
   margin-left:-30px;
   width:60px;
   font-size:16px;
@@ -81,10 +83,7 @@ body
   font-size: 25px;
   width:80px;
 }
-/* .front_question{
-    color: white;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 25px;
-    padding-top: 50px;
-} */
+.flipCard-three{
+    transform: rotateY(180deg);
+}
 
