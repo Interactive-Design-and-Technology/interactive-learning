@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click to Reveal</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./main.js"></script>
+    <title>Expandable Accordion</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
     <script>
-        const questions = [
+        const idtQuestions = [
             {
                 'question': 'Have you heard about the chocolate record player? ',
                 'answer': 'It sounds pretty sweet.'
@@ -21,16 +21,16 @@
                 'question': 'What did one wall say to the other?',
                 'answer': "I'll meet you at the corner."
             }
-        ];
-
+        ]
         window.addEventListener("DOMContentLoaded", (event) => {
-            idtGenerate(questions);
+            console.log(idtQuestions)
+            idtGenerate(idtQuestions);
         });
     </script>
 </head>
 
 <body>
-    <h1>Click to Reveal</h1>
+    <h1>Expandable Accordion</h1>
     <section id="idt-interactive-learning"></section>
 </body>
 

@@ -1,0 +1,96 @@
+body {
+    background-color: #6836a1;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+    color: white;
+    padding-top: 15px;
+}
+
+#idt-interactive-learning {
+    text-align: center;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    display: inline-block;
+    margin: 1em;
+}
+
+.front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 300px;
+    backface-visibility: hidden;
+    background-color: #9662d1;
+    color: black;
+    text-align: center;
+}
+
+.back {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    top: 0;
+    left: 0;
+    background-color: white;
+    backface-visibility: hidden;
+    color: rgb(85, 40, 40);
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.flipCard {
+    transform: rotateY(180deg);
+}
+
+.card .front {
+    background-color: #9662d1;
+    color: white;
+    font-size: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    /* 5px rounded corners */
+}
+
+.card .back {
+    background-color: white;
+    color: #6836a1;
+    font-size: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    /* 5px rounded corners */
+}
+
+#button {
+    position: relative;
+    top: 100px;
+    left: 48vw;
+    margin-left: -30px;
+    width: 60px;
+    font-size: 16px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: arial;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+#button:hover {
+    background-color: #EFF1F3;
+    color: #6836a1;
+    font-size: 25px;
+    width: 80px;
+}

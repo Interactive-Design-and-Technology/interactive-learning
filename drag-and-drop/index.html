@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Drag and Drop Example</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="./main.js"></script>
+	<script>
+		const questions = [
+			{
+				'question': "is the medical term for High Blood Pressure?",
+				'answer': "hypertension",
+			}, {
+				'question': " is medical term for itch caused by mites?",
+				'answer': "scabies",
+			},
+			{
+				'question': " percentage of the human body is water?",
+				'answer': "66%",
+			},
+			{
+				'question': " is the number of taste buds are on your tongue",
+				'answer': "Nine Thousand",
+			},
+			{
+				'question': " is the largest organ of the human body",
+				'answer': "Skin",
+			},
+			{
+				'question': "  part of the human body is effected in Astigmatism",
+				'answer': "Eyes",
+			},
+			{
+				'question': " fat-soluble substance present in green leafy vegetables was given its name because it is required for coagulation of the blood to take place?",
+				'answer': "Vitamin K",
+			},
+		]
+
+		window.addEventListener("DOMContentLoaded", (event) => {
+			idtGenerate(questions);
+		});
+	</script>
+</head>
+
+<body>
+	<h1> Drag and Drop the right answer</h1>
+	<section id="idt-interactive-learning"></section>
+</body>
+
+</html>
