@@ -55,7 +55,7 @@
     position: absolute;
     width: 212px;
     z-index: -1;
-top:190px;
+    top:190px;
 }
 
 /*rendering bug on mobile with box-shadow and transform*/
@@ -81,6 +81,6 @@ top:190px;
 }
 
 .draggable{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 10px;
 }
