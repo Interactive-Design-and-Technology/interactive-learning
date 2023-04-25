@@ -1,22 +1,16 @@
-const idtQuestions = [
-  {
-    'question': "Who discovered X-rays?",
-    'answer': "Wilhelm Röntgen",
-  }, {
-    'question': "Who is the only woman to have won two Nobel Prizes in two different fields?",
-    'answer': "Marie Curie",
-  },
-  {
-    'question': "Which of the following technological developments came first?",
-    'answer': "Telescope",
-  },
-  {
-    'question': "What airplane has not been flown commercially since 2003?",
-    'answer': "Concorde",
-  },
-];
 
-window.addEventListener("DOMContentLoaded", (event) => {
+function idtGenerate(idtQuestions) {
+
+      const main_container = document.getElementById("idt-interactive-learning");
+    main_container.innerHTML = `
+      <div class="card" id="card-idt">
+      </div>
+      <div class="card" id="card-idt-two">
+      </div>
+      <div class="card" id="card-idt-three">
+      </div>
+      <div class="card" id="card-idt-four">
+      </div>`;
 
   for (i = 0; i < idtQuestions.length; i++) {
     document.getElementById('card-idt').innerHTML += `<div class="front"<p>${idtQuestions[0].question}</p></div><div class="back"<p>${idtQuestions[0].answer}</p></div>`
@@ -45,5 +39,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
   function flipcard_four() {
     card_four.classList.toggle("flipCard-four");
   }
-});
+};
 
