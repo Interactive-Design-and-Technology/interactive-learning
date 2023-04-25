@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+
+    <!-- google styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,13 +24,12 @@
             <a href="https://github.com/Raunaq27" target="_blank">@Raunaq27</a> &amp;
             <a href="https://github.com/Anmol135" target="_blank">@Anmol135</a>
         </h2>
-    </header>
-    <main>
         <p class="description">
             This tool allows you to generate HTML, CSS, &amp; JavaScript for interactive learning questions that can
             be inserted into learning management systems.
         </p>
-
+    </header>
+    <main>
         <section id="options">
             <h3>Options</h3>
             <label>Interactive Learning Type:</label>
@@ -40,10 +44,10 @@
         <section id="question-answer">
             <h3>Questions</h3>
             <label>Question:
-                <input type="text" name="question">
+                <input type="text" name="question" placeholder="Type the question here">
             </label><br>
             <label>Answer:
-                <input type="text" name="answer">
+                <input type="text" name="answer" placeholder="Type the answer here">
             </label><br>
         </section>
 
@@ -51,9 +55,11 @@
         <button id="generate">Generate Code</button>
     </main>
 
-    <pre><code class="language-html" id="code">// Generated code will go here.</code></pre>
+    <pre>
+        <code class="language-html" id="code">// Generated code will go here.</code>
+        <button onclick="copyToClipboard()">Copy Code to Clipboard</button>
+    </pre>
 
-    <button onclick="copyToClipboard()">Copy Code to Clipboard</button>
 
     <footer>
         <p>See the source code on <a href="https://github.com/Interactive-Design-and-Technology/interactive-learning"
