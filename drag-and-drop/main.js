@@ -1,36 +1,12 @@
-const idtQuestions = [
-  {
-    'question': "is the medical term for High Blood Pressure?",
-    'answer': "hypertension",
-  }, {
-    'question': " is medical term for itch caused by mites?",
-    'answer': "scabies",
-  },
-  {
-    'question': " percentage of the human body is water?",
-    'answer': "66%",
-  },
-  {
-    'question': " is the number of taste buds are on your tongue",
-    'answer': "Nine Thousand",
-  },
-  {
-    'question': " is the largest organ of the human body",
-    'answer': "Skin",
-  },
-  {
-    'question': "  part of the human body is effected in Astigmatism",
-    'answer': "Eyes",
-  },
-  {
-    'question': " fat-soluble substance present in green leafy vegetables was given its name because it is required for coagulation of the blood to take place?",
-    'answer': "Vitamin K",
-  },
-]
+function idtGenerate(idtQuestions) {
 
-
-/* Events fired on the drag target */
-window.addEventListener("DOMContentLoaded", (event) => {
+  const main_container = document.getElementById("idt-interactive-learning");
+  main_container.innerHTML = `
+    <ol class="domande" id="idt-q"></ol>
+    <div class="container" id="answer"></div>
+    <p id="demo"></p>
+    <button id="checkAnswer">Check</button>
+    <p id="result"></p>`;
 
   for (i = 0; i < idtQuestions.length; i++) {
     document.getElementById('answer').innerHTML += `<p draggable="true" class="dragtarget" id="dragtarget">${idtQuestions[i].answer}</p>`
@@ -118,12 +94,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
         questions[index].innerHTML += `<br><span class="idt-incorrect"> ❌ Incorrect answer</span>`
       }
     }
-  })
-
-  document.getElementById("reset-btn").addEventListener("click", () => {
-
-  }
-  )
-});
-
-
+  });
+}
