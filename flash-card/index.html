@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Card Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="main.js"></script>
+    <script>
+        const questions = [
+            {
+                'question': "Who discovered X-rays?",
+                'answer': "Wilhelm Röntgen",
+            }, {
+                'question': "Who is the only woman to have won two Nobel Prizes in two different fields?",
+                'answer': "Marie Curie",
+            },
+            {
+                'question': "Which of the following technological developments came first?",
+                'answer': "Telescope",
+            },
+            {
+                'question': "What airplane has not been flown commercially since 2003?",
+                'answer': "Concorde",
+            },
+        ];
+
+        window.addEventListener("DOMContentLoaded", (event) => {
+            idtGenerate(questions);
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Flip the Card to know the answer!!</h1>
+    <section id="idt-interactive-learning"></section>
+</body>
+
+</html>
