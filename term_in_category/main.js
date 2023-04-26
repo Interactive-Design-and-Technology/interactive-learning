@@ -5,7 +5,7 @@ function idtGenerate(idtQuestions) {
   for (let i = 0; i < idtQuestions.length; i++) {
     main_container.innerHTML += `
       <div id="draggable-${i}" class="draggable" draggable="true">
-        ${idtQuestions[i].question}
+       ${idtQuestions[i].question}
       </div>
       `;
   }
