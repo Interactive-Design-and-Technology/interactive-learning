@@ -55,28 +55,20 @@ function idtGenerate(idtQuestions) {
 
       if (event.target.classList.contains("draggable")) {
         // add to parent
-        // what is the parent's value? (aka answer)
         const answer = event.target.parentElement.querySelector("span.answer").innerHTML;
         const question_id = draggableElement.id.split("-")[1];
 
-        console.log(`innerHTML: ${answer}`);
-        console.log(`draggableEement: ${draggableElement.id}`);
-
-        // which question do we have? is it in i?
+        // check if answer is correct
         if (idtQuestions[question_id].answer === answer) {
           event.target.parentElement.appendChild(draggableElement);
         }
 
       } else if (event.target.classList.contains("droppable")) {
         // add to target
-        // what is the target's valu? (aka answer)
         const answer = event.target.querySelector("span.answer").innerHTML;
         const question_id = draggableElement.id.split("-")[1];
 
-        console.log(`innerHTML: ${answer}`);
-        console.log(`draggableEement: ${draggableElement.id}`);
-
-        // which question do we have? is it in i?
+        // check if answer is correct
         if (idtQuestions[question_id].answer === answer) {
           event.target.appendChild(draggableElement);
         }
