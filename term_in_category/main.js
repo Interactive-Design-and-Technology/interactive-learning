@@ -4,8 +4,8 @@ function idtGenerate(idtQuestions) {
   // add questions as draggable elements
   for (let i = 0; i < idtQuestions.length; i++) {
     main_container.innerHTML += `
-      <div id="draggable${i}" class="draggable" draggable="true">
-        <span class="question">${idtQuestions[i].question}</span>
+      <div id="draggable-${i}" class="draggable" draggable="true">
+        ${idtQuestions[i].question}
       </div>
       `;
   }
@@ -18,7 +18,7 @@ function idtGenerate(idtQuestions) {
     } else {
       answers.push(idtQuestions[j].answer);
       main_container.innerHTML += `
-        <div id="droppable${j}" class="droppable">
+        <div id="droppable-${j}" class="droppable">
          <span class="answer">${idtQuestions[j].answer}</span>
         </div>
       `;
@@ -51,14 +51,19 @@ function idtGenerate(idtQuestions) {
       let id = event.dataTransfer.getData("text");
       let draggableElement = document.getElementById(id);
 
+      console.log(event.target);
+
       if (event.target.classList.contains("draggable")) {
         // add to parent
         // what is the parent's value? (aka answer)
-        const answer = event.target.parentElement.querySelector("span.answer").innerHTML
+        const answer = event.target.parentElement.querySelector("span.answer").innerHTML;
+        const question_id = draggableElement.id.split("-")[1];
+
         console.log(`innerHTML: ${answer}`);
-        console.log(`idtQuestion: ${i}: ${idtQuestions[i].answer}`);
+        console.log(`draggableEement: ${draggableElement.id}`);
+
         // which question do we have? is it in i?
-        if (idtQuestions[i].answer === answer) {
+        if (idtQuestions[question_id].answer === answer) {
           event.target.parentElement.appendChild(draggableElement);
         }
 
@@ -66,10 +71,13 @@ function idtGenerate(idtQuestions) {
         // add to target
         // what is the target's valu? (aka answer)
         const answer = event.target.querySelector("span.answer").innerHTML;
+        const question_id = draggableElement.id.split("-")[1];
+
         console.log(`innerHTML: ${answer}`);
-        console.log(`idtQuestion: ${i}: ${idtQuestions[i].answer}`);
+        console.log(`draggableEement: ${draggableElement.id}`);
+
         // which question do we have? is it in i?
-        if (idtQuestions[i].answer === answer) {
+        if (idtQuestions[question_id].answer === answer) {
           event.target.appendChild(draggableElement);
         }
       }
