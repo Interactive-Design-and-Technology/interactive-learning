@@ -14,9 +14,11 @@ body {
     max-width: 740px;
     min-width: 320px;
     margin: 0 auto;
-    padding: 0;
+    padding: 1em;
 }
-
+p{
+    padding: 0 1em;
+}
 header, footer{
     margin-top: 1em;
     text-align: center;
@@ -42,13 +44,15 @@ header p {
     text-align: left;
 }
 
-main .description {
+main .description, .codeBox {
     background-color: var(--second-bg-color);
     padding: 1em;
-    margin: 1em;
+    margin: 1em 0em;
     border-radius: var(--main-border-radius);
     border: 1px solid ;
 }
+
+
 
 button, select {
     color: white;
@@ -57,7 +61,7 @@ button, select {
     border: 1px solid ;
     background-color: var(--btn-color);
     border-radius: var(--main-border-radius);
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 #options, #question-answer {
