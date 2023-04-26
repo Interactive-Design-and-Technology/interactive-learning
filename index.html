@@ -9,26 +9,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+
+    <!-- google styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1>Interactive Learning Generator</h1>
+        <h1>Interactive Learning Activity Generator</h1>
         <h2>
             A Student Project by
             <a href="https://github.com/Raunaq27" target="_blank">@Raunaq27</a> &amp;
             <a href="https://github.com/Anmol135" target="_blank">@Anmol135</a>
         </h2>
-    </header>
-    <main>
         <p class="description">
             This tool allows you to generate HTML, CSS, &amp; JavaScript for interactive learning questions that can
             be inserted into learning management systems.
         </p>
-
+    </header>
+    <main>
         <section id="options">
-            <h3>Options</h3>
-            <label>Interactive Learning Type:</label>
+            <h3>Activity Type:</h3>
+            <label>Activity Type:</label>
             <select id="idt-type" name="idt-type" size="1">
                 <option value="click-to-reveal">click-to-reveal</option>
                 <option value="fill-in-the-blanks">fill-in-the-blanks</option>
@@ -38,22 +42,26 @@
         </section>
 
         <section id="question-answer">
-            <h3>Questions</h3>
+            <h3>Questions:</h3>
             <label>Question:
-                <input type="text" name="question">
+                <input type="text" name="question" placeholder="Type the question here">
             </label><br>
             <label>Answer:
-                <input type="text" name="answer">
+                <input type="text" name="answer" placeholder="Type the answer here">
             </label><br>
         </section>
 
         <button id="add-question">Add Question</button>
         <button id="generate">Generate Code</button>
     </main>
-
-    <pre><code class="language-html" id="code">// Generated code will go here.</code></pre>
-
+<section class="codeBox">
+    <h3>Generated Code:</h3>
+    <pre>
+        <code class="language-html" id="code">// Generated code will go here.</code>
+    </pre>
     <button onclick="copyToClipboard()">Copy Code to Clipboard</button>
+</section>
+
 
     <footer>
         <p>See the source code on <a href="https://github.com/Interactive-Design-and-Technology/interactive-learning"
