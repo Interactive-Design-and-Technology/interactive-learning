@@ -72,6 +72,10 @@ button, select {
     padding: 5px 10px;
 }
 
+button:active {
+    background-color: var(--main-bg-color);
+}
+
 #options, #question-answer {
     margin: 1em;
     margin-bottom: 2em;
