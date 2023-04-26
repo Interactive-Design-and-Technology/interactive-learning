@@ -18,7 +18,7 @@
     background-color: lightgreen;
   } */
 
-  #droppable1, #droppable2{
+.droppable {
 	width: 245px;
 	min-height: 200px;
 	background:#CA8E50;
@@ -43,7 +43,7 @@
 
 	
 }
-#droppable1:after,  #droppable2:after {
+/* .droppable:after {
 	background: rgba(255, 255, 255, 0) none repeat scroll 0 0;
 	-webkit-appearance: none;
 	transform: perspective(600px) rotateX(75deg);
@@ -56,16 +56,16 @@
     width: 212px;
     z-index: -1;
     top:190px;
-}
+} */
 
 /*rendering bug on mobile with box-shadow and transform*/
 @media only screen and (max-device-width: 480px) {
-	#droppable1:after, #droppable2:after {
+	.droppable:after {
    	 	box-shadow:none;
 	}
 }
 
-#droppable1:before, #droppable2:before {
+/* .droppable:before {
 	background:#e4af78;
 	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.39) 1%, rgba(255, 255, 255, 0) 2%, rgba(255, 255, 255, 0.1) 100%), #e4af78;
 	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.39) 1%, rgba(255, 255, 255, 0) 2%, rgba(255, 255, 255, 0.1) 100%), #e4af78;
@@ -78,7 +78,7 @@
     margin: -134px auto -65px 18px;
     transform: perspective(500px) rotateX(75deg);
     width: 202px;
-}
+} */
 
 .draggable{
     /* border: 1px solid black; */

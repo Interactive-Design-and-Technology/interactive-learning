@@ -1,34 +1,29 @@
 function idtGenerate(idtQuestions) {
   const main_container = document.getElementById("idt-interactive-learning");
-  for (i = 0; i < idtQuestions.length; i++) {
-  main_container.innerHTML = `
-  <div id="draggable${i}" class="draggable" draggable="true">
-${idtQuestions[i].question}
-  </div>
-  <div id="draggable2" class="draggable" draggable="true">
-    Element 2
-  </div>
-  <div id="draggable3" class="draggable" draggable="true">
-    Element 3
-  </div>
 
-  <div id="droppable1" class="droppable">
-    Category 1
-  </div>
-  <div id="droppable2" class="droppable">
-    Category 2
-  </div>`
-  
-//   <div class="card" id="card-idt-${i}">
-//   <div class="front">
-//     <p>${idtQuestions[i].question}</p>
-//   </div>
-//   <div class="back">
-//     <p>${idtQuestions[i].answer}</p>
-//   </div>
-// </div>`;
-  
-  ;}
+  // add questions as draggable elements
+  for (let i = 0; i < idtQuestions.length; i++) {
+    main_container.innerHTML += `
+      <div id="draggable${i}" class="draggable" draggable="true">
+        ${idtQuestions[i].question}
+      </div>
+      `;
+  }
+
+  // add answers as droppable elements - do not add duplicates
+  const answers = [];
+  for (let j = 0; j < idtQuestions.length; j++) {
+    if (answers.includes(idtQuestions[j].answer)) {
+      // do not add
+    } else {
+      answers.push(idtQuestions[j].answer);
+      main_container.innerHTML += `
+        <div id="droppable${j}" class="droppable">
+         ${idtQuestions[j].answer}
+        </div>
+      `;
+    }
+  }
 
   let draggables = document.getElementsByClassName("draggable");
   for (let i = 0; i < draggables.length; i++) {
