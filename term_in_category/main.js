@@ -5,7 +5,7 @@ function idtGenerate(idtQuestions) {
   for (let i = 0; i < idtQuestions.length; i++) {
     main_container.innerHTML += `
       <div id="draggable${i}" class="draggable" draggable="true">
-        ${idtQuestions[i].question}
+        <span class="question">${idtQuestions[i].question}</span>
       </div>
       `;
   }
@@ -19,7 +19,7 @@ function idtGenerate(idtQuestions) {
       answers.push(idtQuestions[j].answer);
       main_container.innerHTML += `
         <div id="droppable${j}" class="droppable">
-         ${idtQuestions[j].answer}
+         <span class="answer">${idtQuestions[j].answer}</span>
         </div>
       `;
     }
@@ -31,6 +31,7 @@ function idtGenerate(idtQuestions) {
       event.dataTransfer.setData("text", event.target.id);
     });
   }
+
   let droppables = document.getElementsByClassName("droppable");
   for (let i = 0; i < droppables.length; i++) {
     droppables[i].addEventListener("dragover", function (event) {
@@ -39,21 +40,38 @@ function idtGenerate(idtQuestions) {
         event.target.classList.add("drag-over");
       }
     });
+
     droppables[i].addEventListener("dragleave", function (event) {
       if (event.target.classList.contains("droppable")) {
         event.target.classList.remove("drag-over");
       }
     });
+
     droppables[i].addEventListener("drop", function (event) {
       let id = event.dataTransfer.getData("text");
       let draggableElement = document.getElementById(id);
 
       if (event.target.classList.contains("draggable")) {
-        event.target.parentElement.appendChild(draggableElement);
+        // add to parent
+        // what is the parent's value? (aka answer)
+        const answer = event.target.parentElement.querySelector("span.answer").innerHTML
+        console.log(`innerHTML: ${answer}`);
+        console.log(`idtQuestion: ${i}: ${idtQuestions[i].answer}`);
+        // which question do we have? is it in i?
+        if (idtQuestions[i].answer === answer) {
+          event.target.parentElement.appendChild(draggableElement);
+        }
 
       } else if (event.target.classList.contains("droppable")) {
-        event.target.appendChild(draggableElement);
-
+        // add to target
+        // what is the target's valu? (aka answer)
+        const answer = event.target.querySelector("span.answer").innerHTML;
+        console.log(`innerHTML: ${answer}`);
+        console.log(`idtQuestion: ${i}: ${idtQuestions[i].answer}`);
+        // which question do we have? is it in i?
+        if (idtQuestions[i].answer === answer) {
+          event.target.appendChild(draggableElement);
+        }
       }
       event.target.classList.remove("drag-over");
     });
