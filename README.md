@@ -17,6 +17,8 @@ Below is a list of interactive learning activities that are currently supported.
 - Drag and Drop 
 - Expandable Accordion 
 - Fill in the Blanks
+- Flash Cards
+- Term in Category
 
 ## 👩‍💻 Development Team
 
