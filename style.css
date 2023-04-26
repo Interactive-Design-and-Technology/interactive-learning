@@ -44,8 +44,16 @@ header p {
     text-align: left;
 }
 
-main .description, .codeBox {
+main .description {
     background-color: var(--second-bg-color);
+    padding: 1em;
+    margin: 1em 0em;
+    border-radius: var(--main-border-radius);
+    border: 1px solid ;
+}
+
+.codeBox {
+    background-color: #f5f2f0;
     padding: 1em;
     margin: 1em 0em;
     border-radius: var(--main-border-radius);
