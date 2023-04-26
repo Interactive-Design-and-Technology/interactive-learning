@@ -10,10 +10,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     newQuestion.innerHTML += `
     <br><label>Question:
-      <input type="text" name="question">
+      <input type="text" name="question" placeholder="Type the question here">
     </label><br>
     <label>Answer:
-      <input type="text" name="answer">
+      <input type="text" name="answer"  placeholder="Type the answer here">
     </label><br>`
 
     idtMain.appendChild(newQuestion);
