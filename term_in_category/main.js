@@ -1,9 +1,9 @@
 function idtGenerate(idtQuestions) {
   const main_container = document.getElementById("idt-interactive-learning");
+  for (i = 0; i < idtQuestions.length; i++) {
   main_container.innerHTML = `
-  <div id="idt-questions"></div>
-  <div id="draggable1" class="draggable" draggable="true">
-    Element 1
+  <div id="draggable${i}" class="draggable" draggable="true">
+${idtQuestions[i].question}
   </div>
   <div id="draggable2" class="draggable" draggable="true">
     Element 2
@@ -17,7 +17,18 @@ function idtGenerate(idtQuestions) {
   </div>
   <div id="droppable2" class="droppable">
     Category 2
-  </div>`;
+  </div>`
+  
+//   <div class="card" id="card-idt-${i}">
+//   <div class="front">
+//     <p>${idtQuestions[i].question}</p>
+//   </div>
+//   <div class="back">
+//     <p>${idtQuestions[i].answer}</p>
+//   </div>
+// </div>`;
+  
+  ;}
 
   let draggables = document.getElementsByClassName("draggable");
   for (let i = 0; i < draggables.length; i++) {
