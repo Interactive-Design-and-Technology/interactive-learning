@@ -62,22 +62,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
         genCode.innerHTML = `&lt;script&gt;\nconst questions = [\n${codeInfo}];\n${clean_data}\n${dom_code}\n&lt;/script&gt;`
         genCode.innerHTML += `\n&lt;div id='idt-interactive-learning'&gt;&lt;/div&gt;`;
         Prism.highlightAll();
-        addStyling(genCode,`./${selectedOption}/style.css`);
       })
       .catch(error => console.error(error));
   });
 });
-
-// TODO: We should have generic styling that works for everything, but this is ok for now
-function addStyling(genCode, url) {
-  fetch(url)
-    .then(response => response.text())
-    .then(data => {
-      genCode.innerHTML = `\n&lt;style&gt;\n${data}\n&lt;/style&gt;${genCode.innerHTML}`;
-      Prism.highlightAll();
-    })
-    .catch(error => console.error(error));
-}
 
 function copyToClipboard() {
   const code = document.getElementById('code').innerText;
